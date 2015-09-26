@@ -1,0 +1,657 @@
+@prefix : <http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/gabriel/ontologies/2015/8/Meals> .
+
+<http://www.semanticweb.org/gabriel/ontologies/2015/8/Meals> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#hasIngredient
+
+:hasIngredient rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               
+               owl:inverseOf :isIngredientOf .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#hasMain
+
+:hasMain rdf:type owl:ObjectProperty ;
+         
+         rdfs:domain :Meal ;
+         
+         rdfs:range :MealMain ;
+         
+         rdfs:subPropertyOf :hasIngredient .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#hasSide
+
+:hasSide rdf:type owl:ObjectProperty ;
+         
+         rdfs:domain :Meal ;
+         
+         rdfs:range :MealSide ;
+         
+         rdfs:subPropertyOf :hasIngredient .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#isIngredientOf
+
+:isIngredientOf rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#isMainOf
+
+:isMainOf rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :Meal ;
+          
+          rdfs:domain :MealMain ;
+          
+          owl:inverseOf :hasMain ;
+          
+          rdfs:subPropertyOf :isIngredientOf .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#isSideOf
+
+:isSideOf rdf:type owl:ObjectProperty ;
+          
+          owl:inverseOf :hasSide ;
+          
+          rdfs:subPropertyOf :isIngredientOf .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#hasCalorificContentValue
+
+:hasCalorificContentValue rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#BeansSide
+
+:BeansSide rdf:type owl:Class ;
+           
+           rdfs:subClassOf :VeganSide .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#BeefSteakMain
+
+:BeefSteakMain rdf:type owl:Class ;
+               
+               rdfs:subClassOf :MeatMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#BrazilianMeal
+
+:BrazilianMeal rdf:type owl:Class ;
+               
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:intersectionOf ( :Meal
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasSide ;
+                                                            owl:someValuesFrom :BeansSide
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasSide ;
+                                                            owl:someValuesFrom :RiceSide
+                                                          ]
+                                                        )
+                                   ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#ChickenSteakMain
+
+:ChickenSteakMain rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :MeatMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#EggMain
+
+:EggMain rdf:type owl:Class ;
+         
+         rdfs:subClassOf :VegetarianMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#EggSide
+
+:EggSide rdf:type owl:Class ;
+         
+         rdfs:subClassOf :MealSide .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#LightMeal
+
+:LightMeal rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( :Meal
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasCalorificContentValue ;
+                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                             owl:onDatatype xsd:integer ;
+                                                                             owl:withRestrictions ( [ xsd:maxExclusive 300
+                                                                                                    ]
+                                                                                                  )
+                                                                           ]
+                                                      ]
+                                                    )
+                               ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Meal
+
+:Meal rdf:type owl:Class ;
+      
+      rdfs:subClassOf [ rdf:type owl:Class ;
+                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                               owl:onProperty :hasMain ;
+                                               owl:someValuesFrom :MealMain
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :hasSide ;
+                                               owl:someValuesFrom :MealSide
+                                             ]
+                                           )
+                      ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#MealFor1Person
+
+:MealFor1Person rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:intersectionOf ( :Meal
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasMain ;
+                                                             owl:onClass :MealMain ;
+                                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                           ]
+                                                         )
+                                    ] ;
+                
+                owl:disjointWith :MealFor2Persons .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#MealFor2Persons
+
+:MealFor2Persons rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :Meal
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasMain ;
+                                                              owl:onClass :MealMain ;
+                                                              owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasMain ;
+                                   owl:allValuesFrom :MealMain
+                                 ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#MealMain
+
+:MealMain rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#MealSide
+
+:MealSide rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#MeatMain
+
+:MeatMain rdf:type owl:Class ;
+          
+          rdfs:subClassOf :MealMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#MeatMeal
+
+:MeatMeal rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :Meal
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasMain ;
+                                                       owl:someValuesFrom :MeatMain
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasMain ;
+                                                       owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                           owl:unionOf ( :MealMain
+                                                                                         :MeatMain
+                                                                                       )
+                                                                         ]
+                                                     ]
+                                                   )
+                              ] ;
+          
+          owl:disjointWith :VegetarianMeal .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#PastaMain
+
+:PastaMain rdf:type owl:Class ;
+           
+           rdfs:subClassOf :VegetarianMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#PastaMeal
+
+:PastaMeal rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( :Meal
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :hasMain ;
+                                                                        owl:allValuesFrom :PastaMain
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :hasSide ;
+                                                                        owl:allValuesFrom :PastaSide
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                    )
+                               ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#PastaSide
+
+:PastaSide rdf:type owl:Class ;
+           
+           rdfs:subClassOf :VeganSide .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#RiceSide
+
+:RiceSide rdf:type owl:Class ;
+          
+          rdfs:subClassOf :VeganSide .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#SoySteakMain
+
+:SoySteakMain rdf:type owl:Class ;
+              
+              rdfs:subClassOf :VeganMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#VeganMain
+
+:VeganMain rdf:type owl:Class ;
+           
+           rdfs:subClassOf :VegetarianMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#VeganMeal
+
+:VeganMeal rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( :VegetarianMeal
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasMain ;
+                                                        owl:someValuesFrom :VeganMain
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasSide ;
+                                                        owl:someValuesFrom :VeganSide
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasMain ;
+                                                        owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                            owl:unionOf ( :MealMain
+                                                                                          :VeganMain
+                                                                                        )
+                                                                          ]
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasSide ;
+                                                        owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                            owl:unionOf ( :MealSide
+                                                                                          :VeganSide
+                                                                                        )
+                                                                          ]
+                                                      ]
+                                                    )
+                               ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#VeganSide
+
+:VeganSide rdf:type owl:Class ;
+           
+           rdfs:subClassOf :MealSide .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#VegetablesSide
+
+:VegetablesSide rdf:type owl:Class ;
+                
+                rdfs:subClassOf :VeganSide .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#VegetarianMain
+
+:VegetarianMain rdf:type owl:Class ;
+                
+                rdfs:subClassOf :MealMain .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#VegetarianMeal
+
+:VegetarianMeal rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:intersectionOf ( :Meal
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasMain ;
+                                                             owl:allValuesFrom :VegetarianMain
+                                                           ]
+                                                         )
+                                    ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#AdditionalChickenFillet
+
+:AdditionalChickenFillet rdf:type :ChickenSteakMain ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#AdditionalEgg
+
+:AdditionalEgg rdf:type :EggSide ,
+                        owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#AdditionalPasta
+
+:AdditionalPasta rdf:type :PastaSide ,
+                          owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Beef
+
+:Beef rdf:type :BeefSteakMain ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Beef_à_Cavalo_for_one
+
+:Beef_à_Cavalo_for_one rdf:type :MealFor1Person ,
+                                owl:NamedIndividual ;
+                       
+                       :hasCalorificContentValue "600"^^xsd:int ;
+                       
+                       :hasSide :AdditionalEgg ;
+                       
+                       :hasMain :Beef ;
+                       
+                       :hasSide :WhiteBeans ,
+                                :WhiteRice .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Beef_à_Cavalo_for_two
+
+:Beef_à_Cavalo_for_two rdf:type owl:NamedIndividual ;
+                       
+                       :hasCalorificContentValue 500 ;
+                       
+                       :hasSide :AdditionalEgg ;
+                       
+                       :hasMain :Beef ;
+                       
+                       :hasSide :BlackBeans ;
+                       
+                       :hasMain :ScrambledEggs ;
+                       
+                       :hasSide :WhiteRice .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#BlackBeans
+
+:BlackBeans rdf:type :BeansSide ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#ChickenFillet
+
+:ChickenFillet rdf:type :ChickenSteakMain ,
+                        owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Light_chicken_for_one
+
+:Light_chicken_for_one rdf:type :MealFor1Person ,
+                                owl:NamedIndividual ;
+                       
+                       :hasCalorificContentValue 299 ;
+                       
+                       :hasMain :ChickenFillet ;
+                       
+                       :hasSide :Salad ,
+                                :WhiteBeans ,
+                                :WhiteRice .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Light_chicken_for_two
+
+:Light_chicken_for_two rdf:type owl:NamedIndividual ;
+                       
+                       :hasCalorificContentValue 299 ;
+                       
+                       :hasMain :AdditionalChickenFillet ,
+                                :ChickenFillet ;
+                       
+                       :hasSide :Salad ,
+                                :WhiteRice .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Pasta
+
+:Pasta rdf:type :PastaMain ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Salad
+
+:Salad rdf:type :VegetablesSide ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#ScrambledEggs
+
+:ScrambledEggs rdf:type :EggMain ,
+                        owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#SoySteak
+
+:SoySteak rdf:type :SoySteakMain ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Vegan_soy_steak_for_one
+
+:Vegan_soy_steak_for_one rdf:type :MealFor1Person ,
+                                  owl:NamedIndividual ;
+                         
+                         :hasCalorificContentValue 299 ;
+                         
+                         :hasSide :Salad ;
+                         
+                         :hasMain :SoySteak ;
+                         
+                         :hasSide :WhiteRice .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#Vegetarian_Carbonara_for_one
+
+:Vegetarian_Carbonara_for_one rdf:type :MealFor1Person ,
+                                       owl:NamedIndividual ;
+                              
+                              :hasCalorificContentValue 299 ;
+                              
+                              :hasSide :AdditionalEgg ;
+                              
+                              :hasMain :Pasta .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#WhiteBeans
+
+:WhiteBeans rdf:type :BeansSide ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#WhiteRice
+
+:WhiteRice rdf:type :RiceSide ,
+                    owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BeansSide
+                :EggSide
+                :PastaSide
+                :RiceSide
+                :VegetablesSide
+              )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :AdditionalChickenFillet
+                        :AdditionalEgg
+                        :AdditionalPasta
+                        :Beef
+                        :Beef_à_Cavalo_for_one
+                        :Beef_à_Cavalo_for_two
+                        :BlackBeans
+                        :ChickenFillet
+                        :Light_chicken_for_one
+                        :Light_chicken_for_two
+                        :Pasta
+                        :Salad
+                        :ScrambledEggs
+                        :SoySteak
+                        :Vegan_soy_steak_for_one
+                        :Vegetarian_Carbonara_for_one
+                        :WhiteBeans
+                        :WhiteRice
+                      )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Meal
+                :MealMain
+                :MealSide
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
