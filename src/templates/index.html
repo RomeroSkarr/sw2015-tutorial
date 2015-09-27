@@ -10,8 +10,8 @@
 	<div class="container">
 		<div class='row'>
 			<div class='col-lg-12'>
-				<h1>Semantic Web Restaurant</h1>
-				<p>Browse through our menu!</code></p>
+				<h1>Romero's Semantic Restaurant</h1>
+				<p>Browse through our semantic menu!</code></p>
 			</div>
 		</div>
 		<div class='row'>
@@ -35,9 +35,18 @@
 					<a id="link_1" class='btn btn-primary'>Search (with reasoning)</a>
 					<a id="link_2" class='btn btn-primary'>Search (Without reasoning)</a>
 				</div>
+				<br/>
+				<br/>
+				<br/>
+				<div>
+					Notes: I have fixed my ontology from assignment 3 to make more sense and more inferences. The only things I have asserted are the one person meals.<br/><br/>
+					Due to the open world assumption I had some trouble inferencing that, so I decided that category would be good for the "no reasoning" part of the website.<br/><br/>I have managed to inference the whole rest of the  menu though! :) I even inferenced the superclass Meal 
+					(everything that is not a "MealForOnePerson" is just a "Thing", so that is why the "See everything" option, 
+					which searches for "Meal", needs inferencing).
+				</div>
 			</div>
 			<div class='col-lg-6'>
-				<div id="linktarget" class='well' style='height: 15em; scroll: both; overflow: auto;'></div>
+				<div id="linktarget" class='well' style='height: 45em; scroll: both; overflow: auto;'></div>
 			</div>
 		</div>
 	</div>

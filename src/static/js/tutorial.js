@@ -18,24 +18,19 @@ function getResultsOnMenuDiv(reasoning)
 				li.addClass('list-group-item');			
 				$.each(vars, function(index, v)
 				{
-					var v_type = value[v]['type'];
-					var v_value = value[v]['value'];
-					v_value = v_value.substring(v_value.indexOf('#')+1).replace(/_/g," ");		
-					// If the value is a URI, create a hyperlink
-					if (v_type == 'uri')
-					{
-						var a = $('<a></a>');
-						a.attr('href',v_value);
-						a.text(v_value);
-						li.append(a);
-					// Else we're just showing the value.
-					} 
-					else 
-					{
-						li.append(v_value);
-					}
-					li.append('<br/>');
-					
+					var v_value = (value[v]['value']);
+					var name = v_value.substring(v_value.indexOf('#')+1);
+					li.append("<table width=\"100%\">"+
+								"<tr>"+
+									"<td align=\":left\">"+
+										name.replace(/_/g," ")+
+									"</td>"+
+									"<td align=\"right\">"+
+										"<img src=\"/static/css/images/icons/"+name+".png\" style=\"width:128px;height:128px;\">"+
+									"</td>"+
+								"</tr>"+
+							"</table>"+
+							"<br/>");	
 				});
 				ul.append(li);			
 			});			
