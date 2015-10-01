@@ -1,61 +1,87 @@
-function getResultsOnMenuDiv(reasoning) 
-{	
-	var optionFromSelect = $('#query').val();
-	var query = "PREFIX meal: <http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#>\nSELECT ?x WHERE \n{\n  ?x a meal:"+optionFromSelect+" .\n}";
-	var endpoint = 'http://localhost:5820/tutorial/query';
-	var format = 'JSON';	
-	$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format, 'reasoning': reasoning}, function(json)
-	{
-		console.log(json);		
-		try 
+function initMap() 
+{
+	var map = new google.maps.Map(document.getElementById('map'), 
 		{
-			var vars = json.head.vars;		
-			var ul = $('<ul></ul>');
-			ul.addClass('list-group');		
-			$.each(json.results.bindings, function(index,value)
-			{
-				var li = $('<li></li>');
-				li.addClass('list-group-item');			
-				$.each(vars, function(index, v)
-				{
-					var v_value = (value[v]['value']);
-					var name = v_value.substring(v_value.indexOf('#')+1);
-					li.append("<table width=\"100%\">"+
-								"<tr>"+
-									"<td align=\":left\">"+
-										name.replace(/_/g," ")+
-									"</td>"+
-									"<td align=\"right\">"+
-										"<img src=\"/static/css/images/icons/"+name+".png\" style=\"width:128px;height:128px;\">"+
-									"</td>"+
-								"</tr>"+
-							"</table>"+
-							"<br/>");	
-				});
-				ul.append(li);			
-			});			
-			$('#linktarget').html(ul);
-		} 
-		catch(err) 
+			zoom: 2,
+			center: {lat: 0, lng: 0 }
+		}
+	);
+	map.addListener('click', function(e) 
 		{
-			$('#linktarget').html('Something went wrong!');
-		}		
-	});	
+			getResultsOnMenuDiv(e);
+			getFromDBPedia();
+			placeMarkerAndPanTo(e.latLng, map);
+		}
+	);
 }
 
-
-// ############
-//    With Reasoning
-// ############
-$('#link_1').on('click', function(e)
+function placeMarkerAndPanTo(latLng, map) 
 {
-	getResultsOnMenuDiv(true);
-});
+	var marker = new google.maps.Marker(
+		{
+			position: latLng,
+			map: map
+		}
+	);
+    map.panTo(latLng);
+}
 
-// ############
-//    Without Reasoning
-// ############
-$('#link_2').on('click', function(e)
-{
-	getResultsOnMenuDiv(false);
-});
+function getResultsOnMenuDiv(e) 
+{	
+	lat = e.latLng.lat();
+	lng = e.latLng.lng();
+	
+	var query = 
+		"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> \nPREFIX dbo: <http://dbpedia.org/ontology/> \n"+
+		"PREFIX db: <http://dbpedia.org/>\nSELECT ?s WHERE \n"+
+		"{\n"+
+		"    ?s a dbo:Place .\n"+
+		"    ?s geo:lat ?lat .\n"+
+		"    ?s geo:long ?long .\n"+
+		"    FILTER ( ?long > "+lng+" - 5 && ?long < "+lng+" + 5 && ?lat > "+lat+" - 5 && ?lat < "+lat+" + 5)\n"+
+		"} LIMIT 100";
+		
+	//var endpoint = 'http://localhost:5820/tutorial/query';
+	var endpoint = 'http://live.dbpedia.org/sparql';
+	var format = 'JSON';	
+	$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format, 'reasoning': true}, function(json)
+		{
+			console.log(json);		
+			try 
+			{
+				var vars = json.head.vars;	
+				console.log(vars);		
+				var ul = $('<ul></ul>');
+				ul.addClass('list-group');		
+				$.each(json.results.bindings, function(index,value)
+					{
+						var li = $('<li></li>');
+						li.addClass('list-group-item');			
+						$.each(vars, function(index, v)
+						{
+							var v_value = (value[v]['value']);
+							var name = v_value.substring(v_value.indexOf('#')+1);
+							li.append("<table width=\"100%\">"+
+										"<tr>"+
+											"<td align=\":left\">"+
+												name.replace(/_/g," ")+
+											"</td>"+
+											"<td align=\"right\">"+
+												"<img src=\"/static/css/images/icons/"+name+".png\" style=\"width:128px;height:128px;\">"+
+											"</td>"+
+										"</tr>"+
+									"</table>"+
+									"<br/>");	
+						});
+						ul.append(li);			
+					}
+				);			
+				$('#linktarget').html(ul);
+			} 
+			catch(err) 
+			{
+				$('#linktarget').html(err);
+			}		
+		}
+	);	
+}

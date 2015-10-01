@@ -1,56 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SW2015 Tutorial</title>
+  <title>SW2015 Tutorial</title>
 </head>
 <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 50%;
+      }
+    </style>
 <body>
-	<div class="container">
-		<div class='row'>
-			<div class='col-lg-12'>
-				<h1>Romero's Semantic Restaurant</h1>
-				<p>Browse through our semantic menu!</code></p>
-			</div>
-		</div>
-		<div class='row'>
-			<div class='col-lg-6'>
-				<p>Choose your option to see each of our categories:</p>
-				<select id='query' class='sparql' style='width: 100%'>
-					<option value="LightMeal">Light Menu</option>
-					<option value="BrazilianMeal">Brazilian Menu</option>
-					<option value="MeatMeal">Meat Menu</option>
-					<option value="PastaMeal">Pastas</option>
-					<option value="VegetarianMeal">Vegetarian Menu</option>
-					<option value="VeganMeal">Vegan Menu</option>
-					<option value="MealFor2Persons">Meals for two</option>
-					<option value="MealFor1Person">Meals for one (THIS IS THE ONLY OPTION THAT WILL WORK WITHOUT REASONING)
-					<option value="Meal">See everything</option>
-				</select>
-				<br/>
-				<br/>
-				<br/>
-				<div>
-					<a id="link_1" class='btn btn-primary'>Search (with reasoning)</a>
-					<a id="link_2" class='btn btn-primary'>Search (Without reasoning)</a>
-				</div>
-				<br/>
-				<br/>
-				<br/>
-				<div>
-					Notes: I have fixed my ontology from assignment 3 to make more sense and more inferences. The only things I have asserted are the one person meals.<br/><br/>
-					Due to the open world assumption I had some trouble inferencing that, so I decided that category would be good for the "no reasoning" part of the website.<br/><br/>I have managed to inference the whole rest of the  menu though! :) I even inferenced the superclass Meal 
-					(everything that is not a "MealForOnePerson" is just a "Thing", so that is why the "See everything" option, 
-					which searches for "Meal", needs inferencing).
-				</div>
-			</div>
-			<div class='col-lg-6'>
-				<div id="linktarget" class='well' style='height: 45em; scroll: both; overflow: auto;'></div>
-			</div>
-		</div>
-	</div>
-	<script src='{{ url_for("static", filename="js/jquery-1.11.0.min.js") }}' type='text/javascript'></script>
-	<script src='{{ url_for("static", filename="js/tutorial.js") }}' type='text/javascript'></script>
+      <div class='col-lg-6' id="map">
+      </div>
+  <div class="container">
+    <div class='row'>
+      <div class='col-lg-12'>
+        <h1></h1>
+        <p></p>
+      </div>
+    </div>
+    <div class='row'>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKtlmW1_NQV7DtqBmTTWks18zubqsCjlM&signed_in=true&callback=initMap" async defer>
+    </script>
+      <div class='col-lg-6'>
+        <div id="linktarget" class='well' style='height: 45em; scroll: both; overflow: auto;'></div>
+      </div>
+    </div>
+  </div>
+  <script src='{{ url_for("static", filename="js/jquery-1.11.0.min.js") }}' type='text/javascript'></script>
+  <script src='{{ url_for("static", filename="js/tutorial.js") }}' type='text/javascript'></script>
 </body>
 </head>
