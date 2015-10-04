@@ -10,20 +10,9 @@ function initMap()
 		{
 			getPlacesFromCoordinates(e);
 			getThumbnailsFromCoordinates(e);
-			//placeMarkerAndPanTo(e.latLng, map);
+   			map.panTo(e.latLng);
 		}
 	);
-}
-
-function placeMarkerAndPanTo(latLng, map) 
-{
-	var marker = new google.maps.Marker(
-		{
-			position: latLng,
-			map: map
-		}
-	);
-    map.panTo(latLng);
 }
 
 function testFunction()
@@ -142,6 +131,11 @@ function getThumbnailsFromCoordinates(e)
 											"<td align=\"right\">"+
 												"<button onclick=\"testFunction()\">Teste</button>"+
 											"</td>"+
+											/*
+											"<td align=\"right\">"+
+												"<img src=\"/static/css/images/icons/"+name+".png\" style=\"width:128px;height:128px;\">"+
+											"</td>"+
+											*/
 										"</tr>"+
 									"</table>"+
 									"<br/>");	
