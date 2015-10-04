@@ -1,0 +1,197 @@
+@prefix : <http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35> .
+
+<http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/place
+
+<http://dbpedia.org/ontology/place> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:range <http://dbpedia.org/ontology/Place> ;
+                                    
+                                    rdfs:domain <http://dbpedia.org/ontology/SocietalEvent> ;
+                                    
+                                    owl:inverseOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#hasHadAttack
+
+:hasHadAttack rdf:type owl:ObjectProperty ;
+              
+              rdfs:range <http://dbpedia.org/ontology/Attack> ;
+              
+              rdfs:domain <http://dbpedia.org/ontology/Place> ;
+              
+              rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#hasHadMilitaryConflict
+
+:hasHadMilitaryConflict rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:range <http://dbpedia.org/ontology/MilitaryConflict> ;
+                        
+                        rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                        
+                        rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#hasHadRebellion
+
+:hasHadRebellion rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                 
+                 rdfs:range <http://dbpedia.org/ontology/Rebellion> ;
+                 
+                 rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#hasHadSocietalEvent
+
+:hasHadSocietalEvent rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                     
+                     rdfs:range <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/Attack
+
+<http://dbpedia.org/ontology/Attack> rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/MilitaryConflict
+
+<http://dbpedia.org/ontology/MilitaryConflict> rdf:type owl:Class ;
+                                               
+                                               rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/Place
+
+<http://dbpedia.org/ontology/Place> rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Rebellion
+
+<http://dbpedia.org/ontology/Rebellion> rdf:type owl:Class ;
+                                        
+                                        rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/SocietalEvent
+
+<http://dbpedia.org/ontology/SocietalEvent> rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#PlaceWhereAttackHappened
+
+:PlaceWhereAttackHappened rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasHadAttack ;
+                                                owl:someValuesFrom <http://dbpedia.org/ontology/Attack>
+                                              ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#PlaceWhereMilitaryConflictHappened
+
+:PlaceWhereMilitaryConflictHappened rdf:type owl:Class ;
+                                    
+                                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasHadMilitaryConflict ;
+                                                          owl:someValuesFrom <http://dbpedia.org/ontology/MilitaryConflict>
+                                                        ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#PlaceWhereRebellionHappened
+
+:PlaceWhereRebellionHappened rdf:type owl:Class ;
+                             
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasHadRebellion ;
+                                                   owl:someValuesFrom <http://dbpedia.org/ontology/Rebellion>
+                                                 ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#PlaceWhereSocietalEventHappened
+
+:PlaceWhereSocietalEventHappened rdf:type owl:Class ;
+                                 
+                                 owl:equivalentClass [ rdf:type owl:Class ;
+                                                       owl:intersectionOf ( <http://dbpedia.org/ontology/Place>
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :hasHadSocietalEvent ;
+                                                                              owl:someValuesFrom <http://dbpedia.org/ontology/SocietalEvent>
+                                                                            ]
+                                                                          )
+                                                     ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#OurParaguay
+
+:OurParaguay rdf:type owl:NamedIndividual ,
+                      owl:Thing .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#OurParaguayanCivilWar
+
+:OurParaguayanCivilWar rdf:type <http://dbpedia.org/ontology/MilitaryConflict> ,
+                                owl:NamedIndividual ;
+                       
+                       <http://dbpedia.org/ontology/place> :OurParaguay .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
