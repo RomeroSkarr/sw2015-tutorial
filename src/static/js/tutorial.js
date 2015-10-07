@@ -9,7 +9,8 @@ function initMap()
 	map.addListener('click', function(e) 
 		{
 			getPlacesFromCoordinates(e);
-			getThumbnailsFromCoordinates(e);
+			//getThumbnailsFromCoordinates(e);
+			getResultsOnMenuDiv();
    			map.panTo(e.latLng);
 		}
 	);
@@ -103,8 +104,8 @@ function getThumbnailsFromCoordinates(e)
 	  		"?s geo:long ?long . \n"+
   		"FILTER ( ?long > "+lng+" - 5 && ?long < "+lng+" + 5 && ?lat > "+lat+" - 5 && ?lat < "+lat+" + 5) \n"+
 		"} LIMIT 100";		
-	//var endpoint = 'http://localhost:5820/tutorial/query';
-	var endpoint = 'http://live.dbpedia.org/sparql';
+	var endpoint = 'http://localhost:5820/tutorial/query';
+	//var endpoint = 'http://live.dbpedia.org/sparql';
 	var format = 'JSON';	
 	$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format, 'reasoning': true}, function(json)
 		{
@@ -122,7 +123,7 @@ function getThumbnailsFromCoordinates(e)
 						$.each(vars, function(index, v)
 						{
 							var v_value = (value[v]['value']);
-							var name = v_value/*.substring(v_value.indexOf('/')+1)*/;
+							var name = v_value;
 							li.append("<table width=\"100%\">"+
 										"<tr>"+
 											"<td align=\":left\">"+
@@ -131,11 +132,6 @@ function getThumbnailsFromCoordinates(e)
 											"<td align=\"right\">"+
 												"<button onclick=\"testFunction()\">Teste</button>"+
 											"</td>"+
-											/*
-											"<td align=\"right\">"+
-												"<img src=\"/static/css/images/icons/"+name+".png\" style=\"width:128px;height:128px;\">"+
-											"</td>"+
-											*/
 										"</tr>"+
 									"</table>"+
 									"<br/>");	
@@ -151,4 +147,49 @@ function getThumbnailsFromCoordinates(e)
 			}		
 		}
 	);	
+}
+
+function getResultsOnMenuDiv() 
+{	
+	var optionFromSelect = "Meal";
+	var query = "PREFIX meal: <http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#>\nSELECT ?x WHERE \n{\n  ?x a meal:"+optionFromSelect+" .\n}";
+	var endpoint = 'http://localhost:5820/tutorial/query';
+	var format = 'JSON';	
+	$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format, 'reasoning': true}, function(json)
+	{
+		console.log(json);		
+		try 
+		{
+			var vars = json.head.vars;		
+			var ul = $('<ul></ul>');
+			ul.addClass('list-group');		
+			$.each(json.results.bindings, function(index,value)
+			{
+				var li = $('<li></li>');
+				li.addClass('list-group-item');			
+				$.each(vars, function(index, v)
+				{
+					var v_value = (value[v]['value']);
+					var name = v_value.substring(v_value.indexOf('#')+1);
+					li.append("<table width=\"100%\">"+
+								"<tr>"+
+									"<td align=\":left\">"+
+										name.replace(/_/g," ")+
+									"</td>"+
+									"<td align=\"right\">"+
+										"<img src=\"/static/css/images/icons/"+name+".png\" style=\"width:128px;height:128px;\">"+
+									"</td>"+
+								"</tr>"+
+							"</table>"+
+							"<br/>");	
+				});
+				ul.append(li);			
+			});			
+			$('#linktarget').html(ul);
+		} 
+		catch(err) 
+		{
+			$('#linktarget').html('Something went wrong!');
+		}		
+	});	
 }
