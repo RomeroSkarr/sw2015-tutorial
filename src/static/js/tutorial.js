@@ -153,6 +153,7 @@ function getResultsOnMenuDiv()
 {	
 	var optionFromSelect = "Meal";
 	var query = "PREFIX meal: <http://www.semanticweb.org/gabriel/ontologies/2015/8/Products#>\nSELECT ?x WHERE \n{\n  ?x a meal:"+optionFromSelect+" .\n}";
+	alert(query);
 	var endpoint = 'http://localhost:5820/tutorial/query';
 	var format = 'JSON';	
 	$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format, 'reasoning': true}, function(json)
@@ -175,9 +176,6 @@ function getResultsOnMenuDiv()
 								"<tr>"+
 									"<td align=\":left\">"+
 										name.replace(/_/g," ")+
-									"</td>"+
-									"<td align=\"right\">"+
-										"<img src=\"/static/css/images/icons/"+name+".png\" style=\"width:128px;height:128px;\">"+
 									"</td>"+
 								"</tr>"+
 							"</table>"+
