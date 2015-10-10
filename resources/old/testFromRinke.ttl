@@ -1,0 +1,1461 @@
+@prefix : <http://example.com/food#> .
+@prefix dbc: <http://dbpedia.org/resource/Category:> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.com/food> .
+
+<http://example.com/food> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/origin
+
+dbo:origin rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/terms/subject
+
+dct:subject rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/Food
+
+dbo:Food rdf:type owl:Class ;
+         
+         owl:equivalentClass :Food .
+
+
+
+###  http://example.com/food#BadFood
+
+:BadFood rdf:type owl:Class ;
+         
+         rdfs:label "Bad Food" ;
+         
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:intersectionOf ( :Food
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty dct:subject ;
+                                                      owl:hasValue dbc:Potato_dishes
+                                                    ]
+                                                  )
+                             ] ;
+         
+         rdfs:subClassOf :Food ;
+         
+         rdfs:comment "I don't like potato!" .
+
+
+
+###  http://example.com/food#Food
+
+:Food rdf:type owl:Class .
+
+
+
+###  http://example.com/food#GoodFood
+
+:GoodFood rdf:type owl:Class ;
+          
+          rdfs:label "Good Food" ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :Food
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty dct:subject ;
+                                                       owl:hasValue dbc:Indonesian_cuisine
+                                                     ]
+                                                   )
+                              ] ;
+          
+          rdfs:subClassOf :Food ;
+          
+          rdfs:comment "Anything that is an Indonesian dish is good food!" .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://dbpedia.org/resource/Apple_butter
+
+dbr:Apple_butter rdf:type dbo:Food ,
+                          owl:NamedIndividual ;
+                 
+                 dbo:origin dbr:Netherlands ;
+                 
+                 dct:subject dbc:American_cuisine ,
+                             dbc:Appalachian_culture ,
+                             dbc:Apple_products ,
+                             dbc:Belgian_cuisine ,
+                             dbc:Cuisine_of_West_Virginia ,
+                             dbc:Dutch_cuisine ,
+                             dbc:New_England_cuisine ,
+                             dbc:Vermont_cuisine ,
+                             <http://dbpedia.org/resource/Category:Spreads_(food)> .
+
+
+
+###  http://dbpedia.org/resource/Boerenjongens
+
+dbr:Boerenjongens rdf:type dbo:Food ,
+                           owl:NamedIndividual ;
+                  
+                  dbo:origin dbr:Netherlands ;
+                  
+                  dct:subject dbc:Dutch_cuisine ,
+                              dbc:Dutch_words_and_phrases ,
+                              <http://dbpedia.org/resource/Category:Cuisine_of_Groningen_(province)> .
+
+
+
+###  http://dbpedia.org/resource/Chocolate_letter
+
+dbr:Chocolate_letter rdf:type dbo:Food ,
+                              owl:NamedIndividual ;
+                     
+                     dbo:origin dbr:Netherlands ;
+                     
+                     dct:subject dbc:Chocolate ,
+                                 dbc:Dutch_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Coleslaw
+
+dbr:Coleslaw rdf:type dbo:Food ,
+                      owl:NamedIndividual ;
+             
+             dbo:origin dbr:Netherlands ;
+             
+             dct:subject dbc:American_cuisine ,
+                         dbc:Brassica_oleracea_dishes ,
+                         dbc:Cabbage_dishes ,
+                         dbc:Cuisine_of_the_Southern_United_States ,
+                         dbc:Dutch_cuisine ,
+                         dbc:German_cuisine ,
+                         dbc:Pickles ,
+                         dbc:Polish_cuisine ,
+                         dbc:Raw_foods ,
+                         dbc:Salads ,
+                         dbc:Swedish_cuisine ,
+                         dbc:Vegan_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Dutch_brandy
+
+dbr:Dutch_brandy rdf:type dbo:Food ,
+                          owl:NamedIndividual ;
+                 
+                 dbo:origin dbr:Netherlands ;
+                 
+                 dct:subject dbc:Brandies ,
+                             dbc:Dutch_distilled_beverages .
+
+
+
+###  http://dbpedia.org/resource/Dutch_process_chocolate
+
+dbr:Dutch_process_chocolate rdf:type dbo:Food ,
+                                     owl:NamedIndividual ;
+                            
+                            dbo:origin dbr:Netherlands ;
+                            
+                            dct:subject dbc:Chocolate ,
+                                        dbc:Chocolate_industry ,
+                                        dbc:Dutch_cuisine ,
+                                        dbc:Dutch_inventions .
+
+
+
+###  http://dbpedia.org/resource/Hachee
+
+dbr:Hachee rdf:type dbo:Food ,
+                    owl:NamedIndividual ;
+           
+           dbo:origin dbr:Netherlands ;
+           
+           dct:subject dbc:Dutch_cuisine ,
+                       dbc:Meat_dishes ,
+                       dbc:Stews .
+
+
+
+###  http://dbpedia.org/resource/Heineken
+
+dbr:Heineken rdf:type dbo:Food ,
+                      owl:NamedIndividual ;
+             
+             dbo:origin dbr:Netherlands ;
+             
+             dct:subject dbc:Beer_and_breweries_in_the_Netherlands ,
+                         dbc:Heineken_brands ,
+                         <http://dbpedia.org/resource/Category:1873_introductions> .
+
+
+
+###  http://dbpedia.org/resource/Heineken_Oud_Bruin
+
+dbr:Heineken_Oud_Bruin rdf:type dbo:Food ,
+                                owl:NamedIndividual ;
+                       
+                       dbo:origin dbr:Netherlands ;
+                       
+                       dct:subject dbc:Beer_and_breweries_in_the_Netherlands ,
+                                   dbc:Heineken_brands .
+
+
+
+###  http://dbpedia.org/resource/Heineken_Tarwebok
+
+dbr:Heineken_Tarwebok rdf:type dbo:Food ,
+                               owl:NamedIndividual ;
+                      
+                      dbo:origin dbr:Netherlands ;
+                      
+                      dct:subject dbc:Beer_and_breweries_in_the_Netherlands ,
+                                  dbc:Heineken_brands .
+
+
+
+###  http://dbpedia.org/resource/Hopje
+
+dbr:Hopje rdf:type dbo:Food ,
+                   owl:NamedIndividual ;
+          
+          dbo:origin dbr:Netherlands ;
+          
+          dct:subject dbc:Dutch_confectionery ,
+                      dbc:Dutch_words_and_phrases .
+
+
+
+###  http://dbpedia.org/resource/Hutspot
+
+dbr:Hutspot rdf:type dbo:Food ,
+                     :Food ,
+                     owl:NamedIndividual ;
+            
+            dbo:origin dbr:Netherlands ;
+            
+            dct:subject dbc:Dutch_cuisine ,
+                        dbc:Dutch_words_and_phrases ,
+                        dbc:Potato_dishes .
+
+
+
+###  http://dbpedia.org/resource/Jodenkoek
+
+dbr:Jodenkoek rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Cookies ,
+                          dbc:Dutch_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Kapsalon
+
+dbr:Kapsalon rdf:type dbo:Food ,
+                      owl:NamedIndividual ;
+             
+             dbo:origin dbr:Netherlands ;
+             
+             dct:subject dbc:Dutch_cuisine ,
+                         dbc:Dutch_words_and_phrases ,
+                         dbc:Fast_food ,
+                         dbc:Potato_dishes ,
+                         dbc:Street_food ,
+                         <http://dbpedia.org/resource/Category:2003_introductions> .
+
+
+
+###  http://dbpedia.org/resource/Kerststol
+
+dbr:Kerststol rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Christmas_food ,
+                          dbc:Dutch_confectionery ,
+                          dbc:Easter_food ,
+                          dbc:Sweet_breads .
+
+
+
+###  http://dbpedia.org/resource/Kokis
+
+dbr:Kokis rdf:type dbo:Food ,
+                   owl:NamedIndividual ;
+          
+          dbo:origin dbr:Netherlands ;
+          
+          dct:subject dbc:Deep_fried_foods ,
+                      dbc:Foods_containing_coconut ,
+                      dbc:Sri_Lankan_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Krentjebrij
+
+dbr:Krentjebrij rdf:type dbo:Food ,
+                         owl:NamedIndividual ;
+                
+                dbo:origin dbr:Netherlands ;
+                
+                dct:subject dbc:Desserts ,
+                            dbc:Drenthe ,
+                            dbc:Dutch_cuisine ,
+                            dbc:Dutch_words_and_phrases ,
+                            dbc:Porridges ,
+                            dbc:Soups ,
+                            <http://dbpedia.org/resource/Category:Cuisine_of_Groningen_(province)> .
+
+
+
+###  http://dbpedia.org/resource/Kruidnoten
+
+dbr:Kruidnoten rdf:type dbo:Food ,
+                        owl:NamedIndividual ;
+               
+               dbo:origin dbr:Netherlands ;
+               
+               dct:subject dbc:Dutch_confectionery ,
+                           dbc:Dutch_words_and_phrases .
+
+
+
+###  http://dbpedia.org/resource/Lumpia
+
+dbr:Lumpia rdf:type dbo:Food ,
+                    owl:NamedIndividual ;
+           
+           dbo:origin dbr:Netherlands ;
+           
+           dct:subject dbc:Appetizers ,
+                       dbc:Indonesian_Chinese_cuisine ,
+                       dbc:Min_Nan_words_and_phrases ,
+                       dbc:Philippine_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Moorkop
+
+dbr:Moorkop rdf:type dbo:Food ,
+                     owl:NamedIndividual ;
+            
+            dbo:origin dbr:Netherlands ;
+            
+            dct:subject dbc:Dutch_cuisine ,
+                        dbc:Pastries .
+
+
+
+###  http://dbpedia.org/resource/Muisjes
+
+dbr:Muisjes rdf:type dbo:Food ,
+                     owl:NamedIndividual ;
+            
+            dbo:origin dbr:Netherlands ;
+            
+            dct:subject dbc:Anise ,
+                        dbc:Dutch_confectionery ,
+                        dbc:Dutch_cuisine ,
+                        dbc:Dutch_words_and_phrases ,
+                        dbc:Sandwiches .
+
+
+
+###  http://dbpedia.org/resource/Nasi_goreng
+
+dbr:Nasi_goreng rdf:type dbo:Food ,
+                         owl:NamedIndividual ;
+                
+                dbo:origin dbr:Netherlands ;
+                
+                dct:subject dbc:Indonesian_cuisine ,
+                            dbc:Indonesian_rice_dishes ,
+                            dbc:Malay_cuisine ,
+                            dbc:Malay_words_and_phrases ,
+                            dbc:Malaysian_cuisine ,
+                            dbc:National_dishes ,
+                            dbc:Singaporean_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Nonnevot
+
+dbr:Nonnevot rdf:type dbo:Food ,
+                      owl:NamedIndividual ;
+             
+             dbo:origin dbr:Netherlands ;
+             
+             dct:subject dbc:Doughnuts ,
+                         dbc:Limburgian_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Oliebol
+
+dbr:Oliebol rdf:type dbo:Food ,
+                     owl:NamedIndividual ;
+            
+            dbo:origin dbr:Netherlands ;
+            
+            dct:subject dbc:Belgian_cuisine ,
+                        dbc:Doughnuts ,
+                        dbc:Dutch_cuisine ,
+                        dbc:Dutch_words_and_phrases ,
+                        dbc:Holiday_foods .
+
+
+
+###  http://dbpedia.org/resource/Pannekoek
+
+dbr:Pannekoek rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Belgian_cuisine ,
+                          dbc:Dutch_cuisine ,
+                          dbc:Dutch_words_and_phrases ,
+                          dbc:Pancakes .
+
+
+
+###  http://dbpedia.org/resource/Pepernoot
+
+dbr:Pepernoot rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Dutch_confectionery ,
+                          dbc:Dutch_words_and_phrases .
+
+
+
+###  http://dbpedia.org/resource/Plantiac
+
+dbr:Plantiac rdf:type dbo:Food ,
+                      owl:NamedIndividual ;
+             
+             dbo:origin dbr:Netherlands ;
+             
+             dct:subject dbc:Brandies ,
+                         dbc:Dutch_distilled_beverages .
+
+
+
+###  http://dbpedia.org/resource/Poffertjes
+
+dbr:Poffertjes rdf:type dbo:Food ,
+                        owl:NamedIndividual ;
+               
+               dbo:origin dbr:Netherlands ;
+               
+               dct:subject dbc:Dutch_cuisine ,
+                           dbc:Dutch_words_and_phrases ,
+                           dbc:Indonesian_snack_foods ,
+                           dbc:Pancakes ,
+                           dbc:Snack_foods .
+
+
+
+###  http://dbpedia.org/resource/Prawn_cracker
+
+dbr:Prawn_cracker rdf:type dbo:Food ,
+                           owl:NamedIndividual ;
+                  
+                  dbo:origin dbr:Netherlands ;
+                  
+                  dct:subject dbc:Burmese_cuisine ,
+                              dbc:Deep_fried_foods ,
+                              dbc:Indonesian_cuisine ,
+                              dbc:Indonesian_snack_foods ,
+                              dbc:Malay_words_and_phrases ,
+                              dbc:Malaysian_cuisine ,
+                              dbc:Seafood ,
+                              dbc:Southeast_Asian_cuisine ,
+                              dbc:Vietnamese_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Reuzenbol
+
+dbr:Reuzenbol rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Dutch_cuisine ,
+                          dbc:Pastries .
+
+
+
+###  http://dbpedia.org/resource/Rijstevlaai
+
+dbr:Rijstevlaai rdf:type dbo:Food ,
+                         owl:NamedIndividual ;
+                
+                dbo:origin dbr:Netherlands ;
+                
+                dct:subject dbc:Belgian_cuisine ,
+                            dbc:Dutch_cuisine ,
+                            dbc:Dutch_words_and_phrases ,
+                            dbc:Limburgian_cuisine ,
+                            dbc:Rhenish_cuisine ,
+                            dbc:Sweet_pies .
+
+
+
+###  http://dbpedia.org/resource/Rookworst
+
+dbr:Rookworst rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Dutch_sausages ,
+                          dbc:Dutch_words_and_phrases ,
+                          dbc:Smoked_meat .
+
+
+
+###  http://dbpedia.org/resource/Roze_koek
+
+dbr:Roze_koek rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Dutch_confectionery ,
+                          dbc:Dutch_cuisine ,
+                          dbc:Pastries .
+
+
+
+###  http://dbpedia.org/resource/Russian_Mennonite_zwieback
+
+dbr:Russian_Mennonite_zwieback rdf:type dbo:Food ,
+                                        owl:NamedIndividual ;
+                               
+                               dbo:origin dbr:Netherlands ;
+                               
+                               dct:subject dbc:Dutch_cuisine ,
+                                           dbc:Yeast_breads .
+
+
+
+###  http://dbpedia.org/resource/Sambal
+
+dbr:Sambal rdf:type dbo:Food ,
+                    owl:NamedIndividual ;
+           
+           dbo:origin dbr:Netherlands ;
+           
+           dct:subject dbc:Condiments ,
+                       dbc:Hot_sauces ,
+                       dbc:Indonesian_cuisine ,
+                       dbc:Malay_cuisine ,
+                       dbc:Malay_words_and_phrases ,
+                       dbc:Malaysian_cuisine ,
+                       dbc:Philippine_cuisine ,
+                       dbc:Singaporean_cuisine ,
+                       dbc:Sri_Lankan_cuisine ,
+                       dbc:Surinamese_cuisine ,
+                       <http://dbpedia.org/resource/Category:Dips_(food)> .
+
+
+
+###  http://dbpedia.org/resource/Satay
+
+dbr:Satay rdf:type dbo:Food ,
+                   owl:NamedIndividual ;
+          
+          dbo:origin dbr:Netherlands ;
+          
+          dct:subject dbc:Indonesian_cuisine ,
+                      dbc:Malay_cuisine ,
+                      dbc:Malaysian_cuisine ,
+                      dbc:National_dishes ,
+                      dbc:Philippine_cuisine ,
+                      dbc:Satay ,
+                      dbc:Singaporean_cuisine ,
+                      dbc:Street_food .
+
+
+
+###  http://dbpedia.org/resource/Slavink
+
+dbr:Slavink rdf:type dbo:Food ,
+                     owl:NamedIndividual ;
+            
+            dbo:origin dbr:Netherlands ;
+            
+            dct:subject dbc:Bacon_dishes ,
+                        dbc:Dutch_cuisine ,
+                        dbc:Dutch_words_and_phrases ,
+                        dbc:Pork_dishes .
+
+
+
+###  http://dbpedia.org/resource/Soused_herring
+
+dbr:Soused_herring rdf:type dbo:Food ,
+                            owl:NamedIndividual ;
+                   
+                   dbo:origin dbr:Netherlands ;
+                   
+                   dct:subject dbc:Dutch_cuisine ,
+                               dbc:Seafood ,
+                               dbc:Snack_foods .
+
+
+
+###  http://dbpedia.org/resource/Speculoos
+
+dbr:Speculoos rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Almond_cookies ,
+                          dbc:Belgian_cuisine ,
+                          dbc:Christmas_food ,
+                          dbc:Dutch_confectionery ,
+                          dbc:Dutch_words_and_phrases ,
+                          <http://dbpedia.org/resource/Category:Biscuits_(British_style)> .
+
+
+
+###  http://dbpedia.org/resource/Spekkoek
+
+dbr:Spekkoek rdf:type dbo:Food ,
+                      owl:NamedIndividual ;
+             
+             dbo:origin dbr:Netherlands ;
+             
+             dct:subject dbc:Cakes ,
+                         dbc:Dutch_cuisine ,
+                         dbc:Dutch_words_and_phrases ,
+                         dbc:Indonesian_snack_foods .
+
+
+
+###  http://dbpedia.org/resource/Stoemp
+
+dbr:Stoemp rdf:type dbo:Food ,
+                    owl:NamedIndividual ;
+           
+           dbo:origin dbr:Netherlands ;
+           
+           dct:subject dbc:Belgian_cuisine ,
+                       dbc:Dutch_words_and_phrases ,
+                       dbc:Potato_dishes .
+
+
+
+###  http://dbpedia.org/resource/Stroopwafel
+
+dbr:Stroopwafel rdf:type dbo:Food ,
+                         owl:NamedIndividual ;
+                
+                dbo:origin dbr:Netherlands ;
+                
+                dct:subject dbc:Cookies ,
+                            dbc:Dutch_confectionery ,
+                            dbc:Dutch_cuisine ,
+                            dbc:Dutch_inventions ,
+                            dbc:Gouda ,
+                            dbc:Waffles ,
+                            <http://dbpedia.org/resource/Category:1784_introductions> .
+
+
+
+###  http://dbpedia.org/resource/Tiger_bread
+
+dbr:Tiger_bread rdf:type dbo:Food ,
+                         owl:NamedIndividual ;
+                
+                dbo:origin dbr:Netherlands ;
+                
+                dct:subject dbc:Breads ,
+                            dbc:Dutch_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Tompouce
+
+dbr:Tompouce rdf:type dbo:Food ,
+                      owl:NamedIndividual ;
+             
+             dbo:origin dbr:Netherlands ;
+             
+             dct:subject dbc:Dutch_cuisine ,
+                         dbc:Pastries .
+
+
+
+###  http://dbpedia.org/resource/Vla
+
+dbr:Vla rdf:type dbo:Food ,
+                 owl:NamedIndividual ;
+        
+        dbo:origin dbr:Netherlands ;
+        
+        dct:subject dbc:Custard_desserts ,
+                    dbc:Dairy_products ,
+                    dbc:Dutch_cuisine ,
+                    dbc:Dutch_words_and_phrases .
+
+
+
+###  http://dbpedia.org/resource/Vlaai
+
+dbr:Vlaai rdf:type dbo:Food ,
+                   owl:NamedIndividual ;
+          
+          dbo:origin dbr:Netherlands ;
+          
+          dct:subject dbc:Dutch_cuisine ,
+                      dbc:Dutch_words_and_phrases ,
+                      dbc:Limburgian_cuisine ,
+                      dbc:Sweet_pies ,
+                      dbc:Weert .
+
+
+
+###  http://dbpedia.org/resource/Vlokken
+
+dbr:Vlokken rdf:type dbo:Food ,
+                     owl:NamedIndividual ;
+            
+            dbo:origin dbr:Netherlands ;
+            
+            dct:subject dbc:Chocolate ,
+                        dbc:Dutch_confectionery .
+
+
+
+###  http://dbpedia.org/resource/Zeeuws_spek
+
+dbr:Zeeuws_spek rdf:type dbo:Food ,
+                         owl:NamedIndividual ;
+                
+                dbo:origin dbr:Netherlands ;
+                
+                dct:subject dbc:Bacon ,
+                            dbc:Dutch_cuisine .
+
+
+
+###  http://dbpedia.org/resource/Zeeuwse_bolus
+
+dbr:Zeeuwse_bolus rdf:type dbo:Food ,
+                           owl:NamedIndividual ;
+                  
+                  dbo:origin dbr:Netherlands ;
+                  
+                  dct:subject dbc:Dutch_cuisine ,
+                              dbc:Pastries .
+
+
+
+###  http://dbpedia.org/resource/Zoervleis
+
+dbr:Zoervleis rdf:type dbo:Food ,
+                       owl:NamedIndividual ;
+              
+              dbo:origin dbr:Netherlands ;
+              
+              dct:subject dbc:Limburgian_cuisine ,
+                          dbc:Meat_dishes ,
+                          dbc:Stews .
+
+
+
+###  http://dbpedia.org/resource/Banket_(food)
+
+<http://dbpedia.org/resource/Banket_(food)> rdf:type dbo:Food ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            dbo:origin dbr:Netherlands ;
+                                            
+                                            dct:subject dbc:Almonds ,
+                                                        dbc:Christmas_food ,
+                                                        dbc:Dutch_confectionery ,
+                                                        dbc:Pastries .
+
+
+
+###  http://dbpedia.org/resource/Category:Almond_cookies
+
+dbc:Almond_cookies rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Almonds
+
+dbc:Almonds rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:American_cuisine
+
+dbc:American_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Anise
+
+dbc:Anise rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Appalachian_culture
+
+dbc:Appalachian_culture rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Appetizers
+
+dbc:Appetizers rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Apple_products
+
+dbc:Apple_products rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Bacon
+
+dbc:Bacon rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Bacon_dishes
+
+dbc:Bacon_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Beer_and_breweries_in_the_Netherlands
+
+dbc:Beer_and_breweries_in_the_Netherlands rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Belgian_cuisine
+
+dbc:Belgian_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Brandies
+
+dbc:Brandies rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Brassica_oleracea_dishes
+
+dbc:Brassica_oleracea_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Breads
+
+dbc:Breads rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Burmese_cuisine
+
+dbc:Burmese_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Cabbage_dishes
+
+dbc:Cabbage_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Cakes
+
+dbc:Cakes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Chocolate
+
+dbc:Chocolate rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Chocolate_industry
+
+dbc:Chocolate_industry rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Christmas_food
+
+dbc:Christmas_food rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Citrus_sodas
+
+dbc:Citrus_sodas rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Condiments
+
+dbc:Condiments rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Cookies
+
+dbc:Cookies rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Cuisine_of_West_Virginia
+
+dbc:Cuisine_of_West_Virginia rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Cuisine_of_the_Southern_United_States
+
+dbc:Cuisine_of_the_Southern_United_States rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Custard_desserts
+
+dbc:Custard_desserts rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dairy_products
+
+dbc:Dairy_products rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Deep_fried_foods
+
+dbc:Deep_fried_foods rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Desserts
+
+dbc:Desserts rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Doughnuts
+
+dbc:Doughnuts rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Drenthe
+
+dbc:Drenthe rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dutch_confectionery
+
+dbc:Dutch_confectionery rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dutch_cuisine
+
+dbc:Dutch_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dutch_distilled_beverages
+
+dbc:Dutch_distilled_beverages rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dutch_inventions
+
+dbc:Dutch_inventions rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dutch_sausages
+
+dbc:Dutch_sausages rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dutch_words_and_phrases
+
+dbc:Dutch_words_and_phrases rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Easter_food
+
+dbc:Easter_food rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Fast_food
+
+dbc:Fast_food rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Foods_containing_coconut
+
+dbc:Foods_containing_coconut rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:German_cuisine
+
+dbc:German_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Gouda
+
+dbc:Gouda rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Heineken_brands
+
+dbc:Heineken_brands rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Holiday_foods
+
+dbc:Holiday_foods rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Hot_sauces
+
+dbc:Hot_sauces rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Indonesian_Chinese_cuisine
+
+dbc:Indonesian_Chinese_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Indonesian_cuisine
+
+dbc:Indonesian_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Indonesian_rice_dishes
+
+dbc:Indonesian_rice_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Indonesian_snack_foods
+
+dbc:Indonesian_snack_foods rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Limburgian_cuisine
+
+dbc:Limburgian_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Malay_cuisine
+
+dbc:Malay_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Malay_words_and_phrases
+
+dbc:Malay_words_and_phrases rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Malaysian_cuisine
+
+dbc:Malaysian_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Meat_dishes
+
+dbc:Meat_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Min_Nan_words_and_phrases
+
+dbc:Min_Nan_words_and_phrases rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:National_dishes
+
+dbc:National_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:New_England_cuisine
+
+dbc:New_England_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Pancakes
+
+dbc:Pancakes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Pastries
+
+dbc:Pastries rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Philippine_cuisine
+
+dbc:Philippine_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Pickles
+
+dbc:Pickles rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Polish_cuisine
+
+dbc:Polish_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Pork_dishes
+
+dbc:Pork_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Porridges
+
+dbc:Porridges rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Potato_dishes
+
+dbc:Potato_dishes rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Raw_foods
+
+dbc:Raw_foods rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Rhenish_cuisine
+
+dbc:Rhenish_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Salads
+
+dbc:Salads rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Sandwiches
+
+dbc:Sandwiches rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Satay
+
+dbc:Satay rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Seafood
+
+dbc:Seafood rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Singaporean_cuisine
+
+dbc:Singaporean_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Smoked_meat
+
+dbc:Smoked_meat rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Snack_foods
+
+dbc:Snack_foods rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Soft_drinks
+
+dbc:Soft_drinks rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Soups
+
+dbc:Soups rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Southeast_Asian_cuisine
+
+dbc:Southeast_Asian_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Sri_Lankan_cuisine
+
+dbc:Sri_Lankan_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Stews
+
+dbc:Stews rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Street_food
+
+dbc:Street_food rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Surinamese_cuisine
+
+dbc:Surinamese_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Swedish_cuisine
+
+dbc:Swedish_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Sweet_breads
+
+dbc:Sweet_breads rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Sweet_pies
+
+dbc:Sweet_pies rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Trappist_beer
+
+dbc:Trappist_beer rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Vegan_cuisine
+
+dbc:Vegan_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Vermont_cuisine
+
+dbc:Vermont_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Vietnamese_cuisine
+
+dbc:Vietnamese_cuisine rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Waffles
+
+dbc:Waffles rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Weert
+
+dbc:Weert rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Yeast_breads
+
+dbc:Yeast_breads rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:1784_introductions
+
+<http://dbpedia.org/resource/Category:1784_introductions> rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:1873_introductions
+
+<http://dbpedia.org/resource/Category:1873_introductions> rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:2003_introductions
+
+<http://dbpedia.org/resource/Category:2003_introductions> rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Biscuits_(British_style)
+
+<http://dbpedia.org/resource/Category:Biscuits_(British_style)> rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Cuisine_of_Groningen_(province)
+
+<http://dbpedia.org/resource/Category:Cuisine_of_Groningen_(province)> rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Dips_(food)
+
+<http://dbpedia.org/resource/Category:Dips_(food)> rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Category:Spreads_(food)
+
+<http://dbpedia.org/resource/Category:Spreads_(food)> rdf:type owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sisi_(drink)
+
+<http://dbpedia.org/resource/Sisi_(drink)> rdf:type dbo:Food ,
+                                                    owl:NamedIndividual ;
+                                           
+                                           dbo:origin dbr:Netherlands ;
+                                           
+                                           dct:subject dbc:Citrus_sodas ,
+                                                       dbc:Soft_drinks .
+
+
+
+###  http://dbpedia.org/resource/Stip_(dish)
+
+<http://dbpedia.org/resource/Stip_(dish)> rdf:type dbo:Food ,
+                                                   owl:NamedIndividual ;
+                                          
+                                          dbo:origin dbr:Netherlands ;
+                                          
+                                          dct:subject dbc:Dutch_cuisine ,
+                                                      dbc:Porridges .
+
+
+
+###  http://dbpedia.org/resource/Zundert_(beer)
+
+<http://dbpedia.org/resource/Zundert_(beer)> rdf:type dbo:Food ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             dbo:origin dbr:Netherlands ;
+                                             
+                                             dct:subject dbc:Beer_and_breweries_in_the_Netherlands ,
+                                                         dbc:Trappist_beer .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+

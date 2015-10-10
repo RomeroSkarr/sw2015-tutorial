@@ -1,0 +1,341 @@
+@prefix : <http://www.semanticweb.org/gabriel/ontologies/2015/9/untitled-ontology-35#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/gabriel/ontologies/2FinalProject> .
+
+<http://www.semanticweb.org/gabriel/ontologies/2FinalProject> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/place
+
+<http://dbpedia.org/ontology/place> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:range <http://dbpedia.org/ontology/Place> ;
+                                    
+                                    rdfs:domain <http://dbpedia.org/ontology/SocietalEvent> ;
+                                    
+                                    owl:inverseOf <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadAttack
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadAttack> rdf:type owl:ObjectProperty ;
+                                                                          
+                                                                          rdfs:range <http://dbpedia.org/ontology/Attack> ;
+                                                                          
+                                                                          rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                                                                          
+                                                                          rdfs:subPropertyOf <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadConvention
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadConvention> rdf:type owl:ObjectProperty ;
+                                                                              
+                                                                              rdfs:range <http://dbpedia.org/ontology/Convention> ;
+                                                                              
+                                                                              rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                                                                              
+                                                                              rdfs:subPropertyOf <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadMilitaryConflict
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadMilitaryConflict> rdf:type owl:ObjectProperty ;
+                                                                                    
+                                                                                    rdfs:range <http://dbpedia.org/ontology/MilitaryConflict> ;
+                                                                                    
+                                                                                    rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                                                                                    
+                                                                                    rdfs:subPropertyOf <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadRebellion
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadRebellion> rdf:type owl:ObjectProperty ;
+                                                                             
+                                                                             rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                                                                             
+                                                                             rdfs:range <http://dbpedia.org/ontology/Rebellion> ;
+                                                                             
+                                                                             rdfs:subPropertyOf <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> rdf:type owl:ObjectProperty ;
+                                                                                 
+                                                                                 rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                                                                                 
+                                                                                 rdfs:range <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSpaceMission
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSpaceMission> rdf:type owl:ObjectProperty ;
+                                                                                
+                                                                                rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                                                                                
+                                                                                rdfs:range <http://dbpedia.org/ontology/SpaceMission> ;
+                                                                                
+                                                                                rdfs:subPropertyOf <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSportsEvent
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSportsEvent> rdf:type owl:ObjectProperty ;
+                                                                               
+                                                                               rdfs:domain <http://dbpedia.org/ontology/Place> ;
+                                                                               
+                                                                               rdfs:range <http://dbpedia.org/ontology/SportsEvent> ;
+                                                                               
+                                                                               rdfs:subPropertyOf <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/Attack
+
+<http://dbpedia.org/ontology/Attack> rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/Convention
+
+<http://dbpedia.org/ontology/Convention> rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/MilitaryConflict
+
+<http://dbpedia.org/ontology/MilitaryConflict> rdf:type owl:Class ;
+                                               
+                                               rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/Place
+
+<http://dbpedia.org/ontology/Place> rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Rebellion
+
+<http://dbpedia.org/ontology/Rebellion> rdf:type owl:Class ;
+                                        
+                                        rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/SocietalEvent
+
+<http://dbpedia.org/ontology/SocietalEvent> rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/SpaceMission
+
+<http://dbpedia.org/ontology/SpaceMission> rdf:type owl:Class ;
+                                           
+                                           rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://dbpedia.org/ontology/SportsEvent
+
+<http://dbpedia.org/ontology/SportsEvent> rdf:type owl:Class ;
+                                          
+                                          rdfs:subClassOf <http://dbpedia.org/ontology/SocietalEvent> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereAttackHappened
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereAttackHappened> rdf:type owl:Class ;
+                                                                                      
+                                                                                      owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                            owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                            owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadAttack> ;
+                                                                                                                            owl:someValuesFrom <http://dbpedia.org/ontology/Attack>
+                                                                                                                          ]
+                                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                                            owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> ;
+                                                                                                                            owl:someValuesFrom <http://dbpedia.org/ontology/Attack>
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                          ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereConventionHappened
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereConventionHappened> rdf:type owl:Class ;
+                                                                                          
+                                                                                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadConvention> ;
+                                                                                                                                owl:someValuesFrom <http://dbpedia.org/ontology/Convention>
+                                                                                                                              ]
+                                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                                owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> ;
+                                                                                                                                owl:someValuesFrom <http://dbpedia.org/ontology/Convention>
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                              ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereMilitaryConflictHappened
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereMilitaryConflictHappened> rdf:type owl:Class ;
+                                                                                                
+                                                                                                owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                                      owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                      owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadMilitaryConflict> ;
+                                                                                                                                      owl:someValuesFrom <http://dbpedia.org/ontology/MilitaryConflict>
+                                                                                                                                    ]
+                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                      owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> ;
+                                                                                                                                      owl:someValuesFrom <http://dbpedia.org/ontology/MilitaryConflict>
+                                                                                                                                    ]
+                                                                                                                                  )
+                                                                                                                    ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereRebellionHappened
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereRebellionHappened> rdf:type owl:Class ;
+                                                                                         
+                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                               owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                               owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadRebellion> ;
+                                                                                                                               owl:someValuesFrom <http://dbpedia.org/ontology/Rebellion>
+                                                                                                                             ]
+                                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                                               owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> ;
+                                                                                                                               owl:someValuesFrom <http://dbpedia.org/ontology/Rebellion>
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                             ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSocietalEventHappened
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSocietalEventHappened> rdf:type owl:Class ;
+                                                                                             
+                                                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                                   owl:intersectionOf ( <http://dbpedia.org/ontology/Place>
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> ;
+                                                                                                                                          owl:someValuesFrom <http://dbpedia.org/ontology/SocietalEvent>
+                                                                                                                                        ]
+                                                                                                                                      )
+                                                                                                                 ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSpaceMissionHappened
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSpaceMissionHappened> rdf:type owl:Class ;
+                                                                                            
+                                                                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                                  owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSpaceMission> ;
+                                                                                                                  owl:someValuesFrom <http://dbpedia.org/ontology/SpaceMission>
+                                                                                                                ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSportsEventHappened
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSportsEventHappened> rdf:type owl:Class ;
+                                                                                           
+                                                                                           owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                                 owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent> ;
+                                                                                                                                 owl:someValuesFrom <http://dbpedia.org/ontology/SportsEvent>
+                                                                                                                               ]
+                                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty <http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSportsEvent> ;
+                                                                                                                                 owl:someValuesFrom <http://dbpedia.org/ontology/SportsEvent>
+                                                                                                                               ]
+                                                                                                                             )
+                                                                                                               ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurBrazil
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurBrazil> rdf:type owl:NamedIndividual ,
+                                                                                owl:Thing .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurParaguay
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurParaguay> rdf:type owl:NamedIndividual ,
+                                                                                  owl:Thing .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurParaguayanCivilWar
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurParaguayanCivilWar> rdf:type <http://dbpedia.org/ontology/MilitaryConflict> ,
+                                                                                            owl:NamedIndividual ;
+                                                                                   
+                                                                                   <http://dbpedia.org/ontology/place> <http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurParaguay> .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurWorldCup2014
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurWorldCup2014> rdf:type <http://dbpedia.org/ontology/SportsEvent> ,
+                                                                                      owl:NamedIndividual ;
+                                                                             
+                                                                             <http://dbpedia.org/ontology/place> <http://www.semanticweb.org/gabriel/ontologies/FinalProject#OurBrazil> .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+

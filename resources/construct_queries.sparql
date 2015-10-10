@@ -1,0 +1,160 @@
+#################################################################
+#
+#    EventsThatHappenedInFrance.ttl - WON'T BE NEEDING THIS ONE
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+CONSTRUCT {  
+  ?societalEvent dbo:place dbr:France .
+  ?societalEvent a dbo:SocietalEvent .
+} WHERE {
+  ?societalEvent dbo:place dbr:France .
+  ?societalEvent a dbo:SocietalEvent .
+}
+
+
+#################################################################
+#
+#    MilitaryConflictsThatHappenedInFrance.ttl - OK
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+
+CONSTRUCT {  
+  ?societalEvent :place ?place .
+  ?societalEvent a dbo:MilitaryConflict .
+  ?place a dbo:Place.
+} WHERE {
+  ?societalEvent dbo:place ?place .
+  ?societalEvent a dbo:MilitaryConflict .  
+  ?societalEvent dbo:place dbr:France .
+}
+
+
+#################################################################
+#
+#    AttacksThatHappenedInFrance.ttl - There is nothing on DBPedia, didn't get RDF
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+
+CONSTRUCT {  
+  ?societalEvent :place ?place .
+  ?societalEvent a dbo:Attack .
+  ?place a dbo:Place.
+} WHERE {
+  ?societalEvent dbo:place ?place .
+  ?societalEvent a dbo:Attack .  
+  ?societalEvent dbo:place dbr:France .
+}
+
+
+#################################################################
+#
+#    ConventionsThatHappenedInFrance.ttl - There is nothing on DBPedia, didn't get RDF
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+
+CONSTRUCT {  
+  ?societalEvent :place ?place .
+  ?societalEvent a dbo:Conventions .
+  ?place a dbo:Place.
+} WHERE {
+  ?societalEvent dbo:place ?place .
+  ?societalEvent a dbo:Conventions .  
+  ?societalEvent dbo:place dbr:France .
+}
+
+
+#################################################################
+#
+#    RebellionsThatHappenedInFrance.ttl - There is nothing on DBPedia, didn't get RDF
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+
+CONSTRUCT {  
+  ?societalEvent :place ?place .
+  ?societalEvent a dbo:Rebellion .
+  ?place a dbo:Place.
+} WHERE {
+  ?societalEvent dbo:place ?place .
+  ?societalEvent a dbo:Rebellion .  
+  ?societalEvent dbo:place dbr:France .
+}
+
+
+#################################################################
+#
+#    SpaceMissionsThatHappenedInFrance.ttl - There is nothing on DBPedia, didn't get RDF
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+
+CONSTRUCT {  
+  ?societalEvent :place ?place .
+  ?societalEvent a dbo:SpaceMission .
+  ?place a dbo:Place.
+} WHERE {
+  ?societalEvent dbo:place ?place .
+  ?societalEvent a dbo:SpaceMission .  
+  ?societalEvent dbo:place dbr:France .
+}
+
+
+#################################################################
+#
+#    SportsEventsThatHappenedInFrance.ttl - There is nothing on DBPedia, didn't get RDF
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+
+CONSTRUCT {  
+  ?societalEvent :place ?place .
+  ?societalEvent a dbo:SportsEvent .
+  ?place a dbo:Place.
+} WHERE {
+  ?societalEvent dbo:place ?place .
+  ?societalEvent a dbo:SportsEvent .  
+  ?societalEvent dbo:place dbr:France .
+}
+
+#################################################################
+#
+#    PlacesInFranceThatHadEvents.ttl - OK
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX db: <http://dbpedia.org/>
+
+CONSTRUCT {  
+  ?place a dbo:Place .
+} WHERE {
+  ?societalEvent a dbo:SocietalEvent .
+  ?societalEvent dbo:place ?place .
+  ?societalEvent dbo:place dbr:France .
+}

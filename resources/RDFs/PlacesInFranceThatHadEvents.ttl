@@ -1,0 +1,1216 @@
+
+###  http://dbpedia.org/resource/Aisne
+
+dbr:Aisne rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Aix-en-Provence
+
+dbr:Aix-en-Provence rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Alsace
+
+dbr:Alsace rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Alsace-Lorraine
+
+dbr:Alsace-Lorraine rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Amiens
+
+dbr:Amiens rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Ancre
+
+dbr:Ancre rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Armentières
+
+dbr:Armentières rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Arras
+
+dbr:Arras rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Arromanches-les-Bains
+
+dbr:Arromanches-les-Bains rdf:type dbo:Place ,
+                                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Arve
+
+dbr:Arve rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Asnelles
+
+dbr:Asnelles rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Autun
+
+dbr:Autun rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Avesnes-le-Sec
+
+dbr:Avesnes-le-Sec rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bapaume
+
+dbr:Bapaume rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bas-Rhin
+
+dbr:Bas-Rhin rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bastia
+
+dbr:Bastia rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bayonne
+
+dbr:Bayonne rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Beaugency
+
+dbr:Beaugency rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Beaumont-en-Argonne
+
+dbr:Beaumont-en-Argonne rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Belfort
+
+dbr:Belfort rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Belgium
+
+dbr:Belgium rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bordeaux
+
+dbr:Bordeaux rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Boulogne-sur-Mer
+
+dbr:Boulogne-sur-Mer rdf:type dbo:Place ,
+                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brandenburg
+
+dbr:Brandenburg rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bray-sur-Somme
+
+dbr:Bray-sur-Somme rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brittany
+
+dbr:Brittany rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brumath
+
+dbr:Brumath rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Caen
+
+dbr:Caen rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Calais
+
+dbr:Calais rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Cambrai
+
+dbr:Cambrai rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Chambois
+
+dbr:Chambois rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Champagne-Ardenne
+
+dbr:Champagne-Ardenne rdf:type dbo:Place ,
+                               owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Channel_Islands
+
+dbr:Channel_Islands rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Chausey
+
+dbr:Chausey rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Cherbourg-Octeville
+
+dbr:Cherbourg-Octeville rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Compiègne
+
+dbr:Compiègne rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Corsica
+
+dbr:Corsica rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Courcelles-lès-Gisors
+
+dbr:Courcelles-lès-Gisors rdf:type dbo:Place ,
+                                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Craonne
+
+dbr:Craonne rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Crown_of_Aragon
+
+dbr:Crown_of_Aragon rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Doullens
+
+dbr:Doullens rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Dunkirk
+
+dbr:Dunkirk rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/England
+
+dbr:England rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/English_Channel
+
+dbr:English_Channel rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Enguinegatte
+
+dbr:Enguinegatte rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Eure
+
+dbr:Eure rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Famars
+
+dbr:Famars rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Flanders
+
+dbr:Flanders rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Flirey
+
+dbr:Flirey rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/France
+
+dbr:France rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Fromelles
+
+dbr:Fromelles rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Gallia_Lugdunensis
+
+dbr:Gallia_Lugdunensis rdf:type dbo:Place ,
+                                owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Germany
+
+dbr:Germany rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Ginchy
+
+dbr:Ginchy rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Gironde_estuary
+
+dbr:Gironde_estuary rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Grand-Fayt
+
+dbr:Grand-Fayt rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Gravelines
+
+dbr:Gravelines rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Guillemont
+
+dbr:Guillemont rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Haguenau
+
+dbr:Haguenau rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Havrincourt
+
+dbr:Havrincourt rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hendaye
+
+dbr:Hendaye rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hindenburg_Line
+
+dbr:Hindenburg_Line rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hondschoote
+
+dbr:Hondschoote rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Honnecourt-sur-Escaut
+
+dbr:Honnecourt-sur-Escaut rdf:type dbo:Place ,
+                                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Ivry-la-Bataille
+
+dbr:Ivry-la-Bataille rdf:type dbo:Place ,
+                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Joncherey
+
+dbr:Joncherey rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Kingdom_of_France
+
+dbr:Kingdom_of_France rdf:type dbo:Place ,
+                               owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/La_Ciotat
+
+dbr:La_Ciotat rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/La_Rivière-Saint-Sauveur
+
+dbr:La_Rivière-Saint-Sauveur rdf:type dbo:Place ,
+                                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Languedoc
+
+dbr:Languedoc rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Larrun
+
+dbr:Larrun rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Bourget
+
+dbr:Le_Bourget rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Cateau-Cambrésis
+
+dbr:Le_Cateau-Cambrésis rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Catelet
+
+dbr:Le_Catelet rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Havre
+
+dbr:Le_Havre rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Quesnoy
+
+dbr:Le_Quesnoy rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Transloy
+
+dbr:Le_Transloy rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Lille
+
+dbr:Lille rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Linselles
+
+dbr:Linselles rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Loire
+
+dbr:Loire rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Loiret
+
+dbr:Loiret rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Longueval
+
+dbr:Longueval rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Loos-en-Gohelle
+
+dbr:Loos-en-Gohelle rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Lorient
+
+dbr:Lorient rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Low_Countries
+
+dbr:Low_Countries rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Luxembourg
+
+dbr:Luxembourg rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Marquion
+
+dbr:Marquion rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Maubeuge
+
+dbr:Maubeuge rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Meaux
+
+dbr:Meaux rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Mediterranean_Sea
+
+dbr:Mediterranean_Sea rdf:type dbo:Place ,
+                               owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Metz
+
+dbr:Metz rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Mont_Mouchet
+
+dbr:Mont_Mouchet rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Morval
+
+dbr:Morval rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Netherlands
+
+dbr:Netherlands rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Neuve-Chapelle
+
+dbr:Neuve-Chapelle rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Nord-Pas-de-Calais
+
+dbr:Nord-Pas-de-Calais rdf:type dbo:Place ,
+                                owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Normandy
+
+dbr:Normandy rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/North_America
+
+dbr:North_America rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Oise
+
+dbr:Oise rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Orléans
+
+dbr:Orléans rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Orthez
+
+dbr:Orthez rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Paris
+
+dbr:Paris rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pas-de-Calais
+
+dbr:Pas-de-Calais rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Perpignan
+
+dbr:Perpignan rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Peyrestortes
+
+dbr:Peyrestortes rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Picardy
+
+dbr:Picardy rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Piedmont
+
+dbr:Piedmont rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pointe_des_Espagnols
+
+dbr:Pointe_des_Espagnols rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Poitiers
+
+dbr:Poitiers rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Port-Cros
+
+dbr:Port-Cros rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pozières
+
+dbr:Pozières rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pyrénées-Atlantiques
+
+dbr:Pyrénées-Atlantiques rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pyrénées-Orientales
+
+dbr:Pyrénées-Orientales rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Reims
+
+dbr:Reims rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rhineland
+
+dbr:Rhineland rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rhône
+
+dbr:Rhône rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/River_Somme
+
+dbr:River_Somme rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rocquencourt
+
+dbr:Rocquencourt rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rouen
+
+dbr:Rouen rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rouvray-Sainte-Croix
+
+dbr:Rouvray-Sainte-Croix rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Jouin-Bruneval
+
+dbr:Saint-Jouin-Bruneval rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Malo
+
+dbr:Saint-Malo rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Mihiel
+
+dbr:Saint-Mihiel rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Tropez
+
+dbr:Saint-Tropez rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sainte-Honorine-des-Pertes
+
+dbr:Sainte-Honorine-des-Pertes rdf:type dbo:Place ,
+                                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sambre
+
+dbr:Sambre rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saône-et-Loire
+
+dbr:Saône-et-Loire rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Selle
+
+dbr:Selle rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sens
+
+dbr:Sens rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sicily
+
+dbr:Sicily rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Siegfried_Line
+
+dbr:Siegfried_Line rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Soissons
+
+dbr:Soissons rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Spain
+
+dbr:Spain rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Thiepval
+
+dbr:Thiepval rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Toulon
+
+dbr:Toulon rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Toulouse
+
+dbr:Toulouse rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Tourcoing
+
+dbr:Tourcoing rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Trippstadt
+
+dbr:Trippstadt rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Trouillas
+
+dbr:Trouillas rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Turckheim
+
+dbr:Turckheim rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Upper_Normandy
+
+dbr:Upper_Normandy rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Urrugne
+
+dbr:Urrugne rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vercors_Massif
+
+dbr:Vercors_Massif rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Verdun
+
+dbr:Verdun rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Villefranche-sur-Mer
+
+dbr:Villefranche-sur-Mer rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vimy
+
+dbr:Vimy rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vosges
+
+dbr:Vosges rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Wattignies-la-Victoire
+
+dbr:Wattignies-la-Victoire rdf:type dbo:Place ,
+                                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/West_Flanders
+
+dbr:West_Flanders rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/West_Indies
+
+dbr:West_Indies rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Wissembourg
+
+dbr:Wissembourg rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Aisne_(river)
+
+<http://dbpedia.org/resource/Aisne_(river)> rdf:type dbo:Place ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Champagne_(historical_province)
+
+<http://dbpedia.org/resource/Champagne_(historical_province)> rdf:type dbo:Place ,
+                                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Dives_(river)
+
+<http://dbpedia.org/resource/Dives_(river)> rdf:type dbo:Place ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Falaise,_Calvados
+
+<http://dbpedia.org/resource/Falaise,_Calvados> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Fontenoy,_Yonne
+
+<http://dbpedia.org/resource/Fontenoy,_Yonne> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Garris,_Pyrénées-Atlantiques
+
+<http://dbpedia.org/resource/Garris,_Pyrénées-Atlantiques> rdf:type dbo:Place ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Graignes,_Manche
+
+<http://dbpedia.org/resource/Graignes,_Manche> rdf:type dbo:Place ,
+                                                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Granville,_Manche
+
+<http://dbpedia.org/resource/Granville,_Manche> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Hamel,_Somme
+
+<http://dbpedia.org/resource/Le_Hamel,_Somme> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Les_Sables-d'Olonne
+
+<http://dbpedia.org/resource/Les_Sables-d'Olonne> rdf:type dbo:Place ,
+                                                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Lorraine_(region)
+
+<http://dbpedia.org/resource/Lorraine_(region)> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Marne_(river)
+
+<http://dbpedia.org/resource/Marne_(river)> rdf:type dbo:Place ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Montcornet,_Aisne
+
+<http://dbpedia.org/resource/Montcornet,_Aisne> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Nivelle_(river)
+
+<http://dbpedia.org/resource/Nivelle_(river)> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Nord_(French_department)
+
+<http://dbpedia.org/resource/Nord_(French_department)> rdf:type dbo:Place ,
+                                                                owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Orange,_Vaucluse
+
+<http://dbpedia.org/resource/Orange,_Vaucluse> rdf:type dbo:Place ,
+                                                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rochefort,_Charente-Maritime
+
+<http://dbpedia.org/resource/Rochefort,_Charente-Maritime> rdf:type dbo:Place ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Aubin-sur-Mer,_Calvados
+
+<http://dbpedia.org/resource/Saint-Aubin-sur-Mer,_Calvados> rdf:type dbo:Place ,
+                                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Florent,_Haute-Corse
+
+<http://dbpedia.org/resource/Saint-Florent,_Haute-Corse> rdf:type dbo:Place ,
+                                                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Quentin,_Aisne
+
+<http://dbpedia.org/resource/Saint-Quentin,_Aisne> rdf:type dbo:Place ,
+                                                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sedan,_Ardennes
+
+<http://dbpedia.org/resource/Sedan,_Ardennes> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Somme_(department)
+
+<http://dbpedia.org/resource/Somme_(department)> rdf:type dbo:Place ,
+                                                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vauchamps,_Marne
+
+<http://dbpedia.org/resource/Vauchamps,_Marne> rdf:type dbo:Place ,
+                                                        owl:NamedIndividual .

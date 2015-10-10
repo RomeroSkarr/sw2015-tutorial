@@ -1,0 +1,3603 @@
+@prefix : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/gabriel/ontologies/FinalProject#> .
+
+<http://www.semanticweb.org/gabriel/ontologies/FinalProject#> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/place
+
+dbo:place rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/place
+
+dbo:place rdf:type owl:ObjectProperty ;
+          
+          owl:equivalentProperty :place .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadAttack
+
+:hasHadAttack rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :Attack ;
+              
+              rdfs:domain :Place ;
+              
+              rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadConvention
+
+:hasHadConvention rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :Convention ;
+                  
+                  rdfs:domain :Place ;
+                  
+                  rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadMilitaryConflict
+
+:hasHadMilitaryConflict rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:range :MilitaryConflict ;
+                        
+                        rdfs:domain :Place ;
+                        
+                        rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadRebellion
+
+:hasHadRebellion rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Place ;
+                 
+                 rdfs:range :Rebellion ;
+                 
+                 rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSocietalEvent
+
+:hasHadSocietalEvent rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :Place ;
+                     
+                     rdfs:range :SocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSpaceMission
+
+:hasHadSpaceMission rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:domain :Place ;
+                    
+                    rdfs:range :SpaceMission ;
+                    
+                    rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#hasHadSportsEvent
+
+:hasHadSportsEvent rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:domain :Place ;
+                   
+                   rdfs:range :SportsEvent ;
+                   
+                   rdfs:subPropertyOf :hasHadSocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#place
+
+:place rdf:type owl:ObjectProperty ;
+       
+       rdfs:range :Place ;
+       
+       rdfs:domain :SocietalEvent ;
+       
+       owl:inverseOf :hasHadSocietalEvent .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/Attack
+
+dbo:Attack rdf:type owl:Class ;
+           
+           owl:equivalentClass :Attack .
+
+
+
+###  http://dbpedia.org/ontology/Convention
+
+dbo:Convention rdf:type owl:Class ;
+               
+               owl:equivalentClass :Convention .
+
+
+
+###  http://dbpedia.org/ontology/MilitaryConflict
+
+dbo:MilitaryConflict rdf:type owl:Class ;
+                     
+                     owl:equivalentClass :MilitaryConflict .
+
+
+
+###  http://dbpedia.org/ontology/Place
+
+dbo:Place rdf:type owl:Class ;
+          
+          owl:equivalentClass :Place .
+
+
+
+###  http://dbpedia.org/ontology/Rebellion
+
+dbo:Rebellion rdf:type owl:Class ;
+              
+              owl:equivalentClass :Rebellion .
+
+
+
+###  http://dbpedia.org/ontology/SocietalEvent
+
+dbo:SocietalEvent rdf:type owl:Class ;
+                  
+                  owl:equivalentClass :SocietalEvent .
+
+
+
+###  http://dbpedia.org/ontology/SpaceMission
+
+dbo:SpaceMission rdf:type owl:Class ;
+                 
+                 owl:equivalentClass :SpaceMission .
+
+
+
+###  http://dbpedia.org/ontology/SportsEvent
+
+dbo:SportsEvent rdf:type owl:Class ;
+                
+                owl:equivalentClass :SportsEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#Attack
+
+:Attack rdf:type owl:Class ;
+        
+        rdfs:subClassOf :SocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#Convention
+
+:Convention rdf:type owl:Class ;
+            
+            rdfs:subClassOf :SocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#MilitaryConflict
+
+:MilitaryConflict rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :SocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#Place
+
+:Place rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereAttackHappened
+
+:PlaceWhereAttackHappened rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasHadAttack ;
+                                                                owl:someValuesFrom :Attack
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasHadSocietalEvent ;
+                                                                owl:someValuesFrom :Attack
+                                                              ]
+                                                            )
+                                              ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereConventionHappened
+
+:PlaceWhereConventionHappened rdf:type owl:Class ;
+                              
+                              owl:equivalentClass [ rdf:type owl:Class ;
+                                                    owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasHadConvention ;
+                                                                    owl:someValuesFrom :Convention
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasHadSocietalEvent ;
+                                                                    owl:someValuesFrom :Convention
+                                                                  ]
+                                                                )
+                                                  ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereMilitaryConflictHappened
+
+:PlaceWhereMilitaryConflictHappened rdf:type owl:Class ;
+                                    
+                                    owl:equivalentClass [ rdf:type owl:Class ;
+                                                          owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasHadMilitaryConflict ;
+                                                                          owl:someValuesFrom :MilitaryConflict
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasHadSocietalEvent ;
+                                                                          owl:someValuesFrom :MilitaryConflict
+                                                                        ]
+                                                                      )
+                                                        ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereRebellionHappened
+
+:PlaceWhereRebellionHappened rdf:type owl:Class ;
+                             
+                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                   owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasHadRebellion ;
+                                                                   owl:someValuesFrom :Rebellion
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasHadSocietalEvent ;
+                                                                   owl:someValuesFrom :Rebellion
+                                                                 ]
+                                                               )
+                                                 ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSocietalEventHappened
+
+:PlaceWhereSocietalEventHappened rdf:type owl:Class ;
+                                 
+                                 owl:equivalentClass [ rdf:type owl:Class ;
+                                                       owl:intersectionOf ( :Place
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :hasHadSocietalEvent ;
+                                                                              owl:someValuesFrom :SocietalEvent
+                                                                            ]
+                                                                          )
+                                                     ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSpaceMissionHappened
+
+:PlaceWhereSpaceMissionHappened rdf:type owl:Class ;
+                                
+                                owl:equivalentClass [ rdf:type owl:Class ;
+                                                      owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasHadSocietalEvent ;
+                                                                      owl:someValuesFrom :SpaceMission
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasHadSpaceMission ;
+                                                                      owl:someValuesFrom :SpaceMission
+                                                                    ]
+                                                                  )
+                                                    ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#PlaceWhereSportsEventHappened
+
+:PlaceWhereSportsEventHappened rdf:type owl:Class ;
+                               
+                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                     owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasHadSocietalEvent ;
+                                                                     owl:someValuesFrom :SportsEvent
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasHadSportsEvent ;
+                                                                     owl:someValuesFrom :SportsEvent
+                                                                   ]
+                                                                 )
+                                                   ] .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#Rebellion
+
+:Rebellion rdf:type owl:Class ;
+           
+           rdfs:subClassOf :SocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#SocietalEvent
+
+:SocietalEvent rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#SpaceMission
+
+:SpaceMission rdf:type owl:Class ;
+              
+              rdfs:subClassOf :SocietalEvent .
+
+
+
+###  http://www.semanticweb.org/gabriel/ontologies/FinalProject#SportsEvent
+
+:SportsEvent rdf:type owl:Class ;
+             
+             rdfs:subClassOf :SocietalEvent .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://dbpedia.org/resource/Action_of_14_June_1742
+
+dbr:Action_of_14_June_1742 rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Action_of_15_July_1805
+
+dbr:Action_of_15_July_1805 rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Action_of_18_February_1639
+
+dbr:Action_of_18_February_1639 rdf:type dbo:MilitaryConflict ,
+                                        owl:NamedIndividual ,
+                                        owl:Thing ;
+                               
+                               :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Action_of_30_May_1798
+
+dbr:Action_of_30_May_1798 rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Action_of_5_November_1813
+
+dbr:Action_of_5_November_1813 rdf:type dbo:MilitaryConflict ,
+                                       owl:NamedIndividual ,
+                                       owl:Thing ;
+                              
+                              :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Aisne
+
+dbr:Aisne rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Aix-en-Provence
+
+dbr:Aix-en-Provence rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Albigensian_Crusade
+
+dbr:Albigensian_Crusade rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Allied_advance_from_Paris_to_the_Rhine
+
+dbr:Allied_advance_from_Paris_to_the_Rhine rdf:type dbo:MilitaryConflict ,
+                                                    owl:NamedIndividual ,
+                                                    owl:Thing ;
+                                           
+                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Alsace
+
+dbr:Alsace rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Alsace-Lorraine
+
+dbr:Alsace-Lorraine rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Amiens
+
+dbr:Amiens rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Ancre
+
+dbr:Ancre rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Armentières
+
+dbr:Armentières rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Arras
+
+dbr:Arras rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Arromanches-les-Bains
+
+dbr:Arromanches-les-Bains rdf:type dbo:Place ,
+                                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Arve
+
+dbr:Arve rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Asnelles
+
+dbr:Asnelles rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Attacks_on_High_Wood
+
+dbr:Attacks_on_High_Wood rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Attacks_on_the_Butte_de_Warlencourt
+
+dbr:Attacks_on_the_Butte_de_Warlencourt rdf:type dbo:MilitaryConflict ,
+                                                 owl:NamedIndividual ,
+                                                 owl:Thing ;
+                                        
+                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Autun
+
+dbr:Autun rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Avesnes-le-Sec
+
+dbr:Avesnes-le-Sec rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bapaume
+
+dbr:Bapaume rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bas-Rhin
+
+dbr:Bas-Rhin rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Basque_conflict
+
+dbr:Basque_conflict rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Bastia
+
+dbr:Bastia rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Battle_for_Brest
+
+dbr:Battle_for_Brest rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Agendicum
+
+dbr:Battle_of_Agendicum rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Alesia
+
+dbr:Battle_of_Alesia rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Aquae_Sextiae
+
+dbr:Battle_of_Aquae_Sextiae rdf:type dbo:MilitaryConflict ,
+                                     owl:NamedIndividual ,
+                                     owl:Thing ;
+                            
+                            :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Arausio
+
+dbr:Battle_of_Arausio rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Aubers_Ridge
+
+dbr:Battle_of_Aubers_Ridge rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Autun
+
+dbr:Battle_of_Autun rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Avesnes-le-Sec
+
+dbr:Battle_of_Avesnes-le-Sec rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Bayonne
+
+dbr:Battle_of_Bayonne rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Bazentin_Ridge
+
+dbr:Battle_of_Bazentin_Ridge rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Beaumont
+
+dbr:Battle_of_Beaumont rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Bibracte
+
+dbr:Battle_of_Bibracte rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Brumath
+
+dbr:Battle_of_Brumath rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Burdigala
+
+dbr:Battle_of_Burdigala rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Chambois
+
+dbr:Battle_of_Chambois rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Craonne
+
+dbr:Battle_of_Craonne rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Famars
+
+dbr:Battle_of_Famars rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Festubert
+
+dbr:Battle_of_Festubert rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Flirey
+
+dbr:Battle_of_Flirey rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Fort_Driant
+
+dbr:Battle_of_Fort_Driant rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_France
+
+dbr:Battle_of_France rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Fromelles
+
+dbr:Battle_of_Fromelles rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Garris
+
+dbr:Battle_of_Garris rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Ginchy
+
+dbr:Battle_of_Ginchy rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Gisors
+
+dbr:Battle_of_Gisors rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Graignes
+
+dbr:Battle_of_Graignes rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Guillemont
+
+dbr:Battle_of_Guillemont rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Hallue
+
+dbr:Battle_of_Hallue rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Hamel
+
+dbr:Battle_of_Hamel rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Havrincourt
+
+dbr:Battle_of_Havrincourt rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Honnecourt
+
+dbr:Battle_of_Honnecourt rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Ivry
+
+dbr:Battle_of_Ivry rdf:type dbo:MilitaryConflict ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_La_Ciotat
+
+dbr:Battle_of_La_Ciotat rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Le_Bourget
+
+dbr:Battle_of_Le_Bourget rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Le_Cateau
+
+dbr:Battle_of_Le_Cateau rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Le_Grand_Fayt
+
+dbr:Battle_of_Le_Grand_Fayt rdf:type dbo:MilitaryConflict ,
+                                     owl:NamedIndividual ,
+                                     owl:Thing ;
+                            
+                            :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Le_Transloy
+
+dbr:Battle_of_Le_Transloy rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Lincelles
+
+dbr:Battle_of_Lincelles rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Montcornet
+
+dbr:Battle_of_Montcornet rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Moreuil_Wood
+
+dbr:Battle_of_Moreuil_Wood rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Morval
+
+dbr:Battle_of_Morval rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Mouquet_Farm
+
+dbr:Battle_of_Mouquet_Farm rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Nivelle
+
+dbr:Battle_of_Nivelle rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Orthez
+
+dbr:Battle_of_Orthez rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Orthez_1569
+
+dbr:Battle_of_Orthez_1569 rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Peyrestortes
+
+dbr:Battle_of_Peyrestortes rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Poitiers
+
+dbr:Battle_of_Poitiers rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Port-en-Bessin
+
+dbr:Battle_of_Port-en-Bessin rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Port_Cros
+
+dbr:Battle_of_Port_Cros rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Rhone_Crossing
+
+dbr:Battle_of_Rhone_Crossing rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Rocquencourt
+
+dbr:Battle_of_Rocquencourt rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Saint-Mihiel
+
+dbr:Battle_of_Saint-Mihiel rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Sans_Culottes_Camp
+
+dbr:Battle_of_Sans_Culottes_Camp rdf:type dbo:MilitaryConflict ,
+                                          owl:NamedIndividual ,
+                                          owl:Thing ;
+                                 
+                                 :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_St._Quentin_Canal
+
+dbr:Battle_of_St._Quentin_Canal rdf:type dbo:MilitaryConflict ,
+                                         owl:NamedIndividual ,
+                                         owl:Thing ;
+                                
+                                :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Thiepval_Ridge
+
+dbr:Battle_of_Thiepval_Ridge rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Tourcoing
+
+dbr:Battle_of_Tourcoing rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Truillas
+
+dbr:Battle_of_Truillas rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Turckheim
+
+dbr:Battle_of_Turckheim rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Vauchamps
+
+dbr:Battle_of_Vauchamps rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Vimy_Ridge
+
+dbr:Battle_of_Vimy_Ridge rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Wattignies
+
+dbr:Battle_of_Wattignies rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Ancre_Heights
+
+dbr:Battle_of_the_Ancre_Heights rdf:type dbo:MilitaryConflict ,
+                                         owl:NamedIndividual ,
+                                         owl:Thing ;
+                                
+                                :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Axona
+
+dbr:Battle_of_the_Axona rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Bidassoa
+
+dbr:Battle_of_the_Bidassoa rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Catalaunian_Plains
+
+dbr:Battle_of_the_Catalaunian_Plains rdf:type dbo:MilitaryConflict ,
+                                              owl:NamedIndividual ,
+                                              owl:Thing ;
+                                     
+                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Herrings
+
+dbr:Battle_of_the_Herrings rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Nive
+
+dbr:Battle_of_the_Nive rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Selle
+
+dbr:Battle_of_the_Selle rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Spurs
+
+dbr:Battle_of_the_Spurs rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Vosges
+
+dbr:Battle_of_the_Vosges rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Bayonne
+
+dbr:Bayonne rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Beaugency
+
+dbr:Beaugency rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Beaumont-en-Argonne
+
+dbr:Beaumont-en-Argonne rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Belfort
+
+dbr:Belfort rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Belgium
+
+dbr:Belgium rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bloody_April
+
+dbr:Bloody_April rdf:type dbo:MilitaryConflict ,
+                          owl:NamedIndividual ,
+                          owl:Thing ;
+                 
+                 :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Bombardment_of_Cherbourg
+
+dbr:Bombardment_of_Cherbourg rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Bordeaux
+
+dbr:Bordeaux rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Boulogne-sur-Mer
+
+dbr:Boulogne-sur-Mer rdf:type dbo:Place ,
+                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brandenburg
+
+dbr:Brandenburg rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Bray-sur-Somme
+
+dbr:Bray-sur-Somme rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brittany
+
+dbr:Brittany rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brumath
+
+dbr:Brumath rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Caen
+
+dbr:Caen rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Calais
+
+dbr:Calais rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Cambrai
+
+dbr:Cambrai rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Combles
+
+dbr:Capture_of_Combles rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_La_Boisselle
+
+dbr:Capture_of_La_Boisselle rdf:type dbo:MilitaryConflict ,
+                                     owl:NamedIndividual ,
+                                     owl:Thing ;
+                            
+                            :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Mametz
+
+dbr:Capture_of_Mametz rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Montauban
+
+dbr:Capture_of_Montauban rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Oppy_Wood
+
+dbr:Capture_of_Oppy_Wood rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Regina_Trench
+
+dbr:Capture_of_Regina_Trench rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Schwaben_Redoubt
+
+dbr:Capture_of_Schwaben_Redoubt rdf:type dbo:MilitaryConflict ,
+                                         owl:NamedIndividual ,
+                                         owl:Thing ;
+                                
+                                :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Chambois
+
+dbr:Chambois rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Champagne-Ardenne
+
+dbr:Champagne-Ardenne rdf:type dbo:Place ,
+                               owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Channel_Islands
+
+dbr:Channel_Islands rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Chausey
+
+dbr:Chausey rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Cherbourg-Octeville
+
+dbr:Cherbourg-Octeville rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Column_of_the_Goddess
+
+dbr:Column_of_the_Goddess rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Compiègne
+
+dbr:Compiègne rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Corsica
+
+dbr:Corsica rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Courcelles-lès-Gisors
+
+dbr:Courcelles-lès-Gisors rdf:type dbo:Place ,
+                                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Craonne
+
+dbr:Craonne rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Crossing_of_the_Somme
+
+dbr:Crossing_of_the_Somme rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Crown_of_Aragon
+
+dbr:Crown_of_Aragon rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Delville_Wood_order_of_battle
+
+dbr:Delville_Wood_order_of_battle rdf:type dbo:MilitaryConflict ,
+                                           owl:NamedIndividual ,
+                                           owl:Thing ;
+                                  
+                                  :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Demonstration_of_20_June_1792
+
+dbr:Demonstration_of_20_June_1792 rdf:type dbo:MilitaryConflict ,
+                                           owl:NamedIndividual ,
+                                           owl:Thing ;
+                                  
+                                  :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Doullens
+
+dbr:Doullens rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Dunkirk
+
+dbr:Dunkirk rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Dunkirk_evacuation
+
+dbr:Dunkirk_evacuation rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/England
+
+dbr:England rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/English_Channel
+
+dbr:English_Channel rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Enguinegatte
+
+dbr:Enguinegatte rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Eure
+
+dbr:Eure rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Falaise_pocket
+
+dbr:Falaise_pocket rdf:type dbo:MilitaryConflict ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Famars
+
+dbr:Famars rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/First_Battle_of_Champagne
+
+dbr:First_Battle_of_Champagne rdf:type dbo:MilitaryConflict ,
+                                       owl:NamedIndividual ,
+                                       owl:Thing ;
+                              
+                              :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/First_Battle_of_the_Marne
+
+dbr:First_Battle_of_the_Marne rdf:type dbo:MilitaryConflict ,
+                                       owl:NamedIndividual ,
+                                       owl:Thing ;
+                              
+                              :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Flanders
+
+dbr:Flanders rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Flirey
+
+dbr:Flirey rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Fort_Vaux
+
+dbr:Fort_Vaux rdf:type dbo:MilitaryConflict ,
+                       owl:NamedIndividual ,
+                       owl:Thing ;
+              
+              :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/France
+
+dbr:France rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Franco-Dutch_War
+
+dbr:Franco-Dutch_War rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Franco-Prussian_War
+
+dbr:Franco-Prussian_War rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Fromelles
+
+dbr:Fromelles rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Gallia_Lugdunensis
+
+dbr:Gallia_Lugdunensis rdf:type dbo:Place ,
+                                owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Germany
+
+dbr:Germany rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Ginchy
+
+dbr:Ginchy rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Gironde_estuary
+
+dbr:Gironde_estuary rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Gold_Beach
+
+dbr:Gold_Beach rdf:type dbo:MilitaryConflict ,
+                        owl:NamedIndividual ,
+                        owl:Thing ;
+               
+               :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Grand-Fayt
+
+dbr:Grand-Fayt rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Granville_Raid
+
+dbr:Granville_Raid rdf:type dbo:MilitaryConflict ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Gravelines
+
+dbr:Gravelines rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Guillemont
+
+dbr:Guillemont rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Haguenau
+
+dbr:Haguenau rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Havrincourt
+
+dbr:Havrincourt rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hawthorn_Ridge_Redoubt
+
+dbr:Hawthorn_Ridge_Redoubt rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Hendaye
+
+dbr:Hendaye rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hindenburg_Line
+
+dbr:Hindenburg_Line rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hondschoote
+
+dbr:Hondschoote rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Honnecourt-sur-Escaut
+
+dbr:Honnecourt-sur-Escaut rdf:type dbo:Place ,
+                                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hundred_Days_Offensive
+
+dbr:Hundred_Days_Offensive rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Ivry-la-Bataille
+
+dbr:Ivry-la-Bataille rdf:type dbo:Place ,
+                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Joncherey
+
+dbr:Joncherey rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Kingdom_of_France
+
+dbr:Kingdom_of_France rdf:type dbo:Place ,
+                               owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/La_Ciotat
+
+dbr:La_Ciotat rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/La_Rivière-Saint-Sauveur
+
+dbr:La_Rivière-Saint-Sauveur rdf:type dbo:Place ,
+                                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Languedoc
+
+dbr:Languedoc rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Larrun
+
+dbr:Larrun rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Bourget
+
+dbr:Le_Bourget rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Cateau-Cambrésis
+
+dbr:Le_Cateau-Cambrésis rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Catelet
+
+dbr:Le_Catelet rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Havre
+
+dbr:Le_Havre rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Quesnoy
+
+dbr:Le_Quesnoy rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Le_Transloy
+
+dbr:Le_Transloy rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Leipzig_salient
+
+dbr:Leipzig_salient rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Lille
+
+dbr:Lille rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Linselles
+
+dbr:Linselles rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Lochnagar_mine
+
+dbr:Lochnagar_mine rdf:type dbo:MilitaryConflict ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Loire
+
+dbr:Loire rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Loiret
+
+dbr:Loiret rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Longueval
+
+dbr:Longueval rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Loos-en-Gohelle
+
+dbr:Loos-en-Gohelle rdf:type dbo:Place ,
+                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Lorient
+
+dbr:Lorient rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Loss_of_the_Kink_Salient
+
+dbr:Loss_of_the_Kink_Salient rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Low_Countries
+
+dbr:Low_Countries rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Luxembourg
+
+dbr:Luxembourg rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Maquis_du_Mont_Mouchet
+
+dbr:Maquis_du_Mont_Mouchet rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Maquis_du_Vercors
+
+dbr:Maquis_du_Vercors rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Marquion
+
+dbr:Marquion rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Maubeuge
+
+dbr:Maubeuge rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Meaux
+
+dbr:Meaux rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Mediterranean_Sea
+
+dbr:Mediterranean_Sea rdf:type dbo:Place ,
+                               owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Metz
+
+dbr:Metz rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Mission_Albany
+
+dbr:Mission_Albany rdf:type dbo:MilitaryConflict ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Mont_Mouchet
+
+dbr:Mont_Mouchet rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Morval
+
+dbr:Morval rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Netherlands
+
+dbr:Netherlands rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Neuve-Chapelle
+
+dbr:Neuve-Chapelle rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Nivelle_Offensive
+
+dbr:Nivelle_Offensive rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Nord-Pas-de-Calais
+
+dbr:Nord-Pas-de-Calais rdf:type dbo:Place ,
+                                owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Normandy
+
+dbr:Normandy rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/North_America
+
+dbr:North_America rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Oise
+
+dbr:Oise rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Operation_Aquatint
+
+dbr:Operation_Aquatint rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Ariel
+
+dbr:Operation_Ariel rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Biting
+
+dbr:Operation_Biting rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Bodenplatte
+
+dbr:Operation_Bodenplatte rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Epsom
+
+dbr:Operation_Epsom rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Forfar
+
+dbr:Operation_Forfar rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Loyton
+
+dbr:Operation_Loyton rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Michael
+
+dbr:Operation_Michael rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Paula
+
+dbr:Operation_Paula rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Pistol
+
+dbr:Operation_Pistol rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Tarbrush
+
+dbr:Operation_Tarbrush rdf:type dbo:MilitaryConflict ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Operation_Tractable
+
+dbr:Operation_Tractable rdf:type dbo:MilitaryConflict ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Order_of_battle_for_the_Spring_Offensive
+
+dbr:Order_of_battle_for_the_Spring_Offensive rdf:type dbo:MilitaryConflict ,
+                                                      owl:NamedIndividual ,
+                                                      owl:Thing ;
+                                             
+                                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Orléans
+
+dbr:Orléans rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Orthez
+
+dbr:Orthez rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Paris
+
+dbr:Paris rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pas-de-Calais
+
+dbr:Pas-de-Calais rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Perpignan
+
+dbr:Perpignan rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Peyrestortes
+
+dbr:Peyrestortes rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Picardy
+
+dbr:Picardy rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Piedmont
+
+dbr:Piedmont rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pointe_des_Espagnols
+
+dbr:Pointe_des_Espagnols rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pointe_du_Hoc
+
+dbr:Pointe_du_Hoc rdf:type dbo:MilitaryConflict ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Poitiers
+
+dbr:Poitiers rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Port-Cros
+
+dbr:Port-Cros rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pozières
+
+dbr:Pozières rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pyrénées-Atlantiques
+
+dbr:Pyrénées-Atlantiques rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Pyrénées-Orientales
+
+dbr:Pyrénées-Orientales rdf:type dbo:Place ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Race_to_the_Sea
+
+dbr:Race_to_the_Sea rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Raid_on_Cherbourg
+
+dbr:Raid_on_Cherbourg rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Raid_on_Le_Havre
+
+dbr:Raid_on_Le_Havre rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Raid_on_Lorient
+
+dbr:Raid_on_Lorient rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Raid_on_Rochefort
+
+dbr:Raid_on_Rochefort rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Raid_on_St_Malo
+
+dbr:Raid_on_St_Malo rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Reims
+
+dbr:Reims rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rhineland
+
+dbr:Rhineland rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rhône
+
+dbr:Rhône rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/River_Somme
+
+dbr:River_Somme rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rocquencourt
+
+dbr:Rocquencourt rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rouen
+
+dbr:Rouen rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rouvray-Sainte-Croix
+
+dbr:Rouvray-Sainte-Croix rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Jouin-Bruneval
+
+dbr:Saint-Jouin-Bruneval rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Malo
+
+dbr:Saint-Malo rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Mihiel
+
+dbr:Saint-Mihiel rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Tropez
+
+dbr:Saint-Tropez rdf:type dbo:Place ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sainte-Honorine-des-Pertes
+
+dbr:Sainte-Honorine-des-Pertes rdf:type dbo:Place ,
+                                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sambre
+
+dbr:Sambre rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saône-et-Loire
+
+dbr:Saône-et-Loire rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Scuttling_of_the_French_fleet_in_Toulon
+
+dbr:Scuttling_of_the_French_fleet_in_Toulon rdf:type dbo:MilitaryConflict ,
+                                                     owl:NamedIndividual ,
+                                                     owl:Thing ;
+                                            
+                                            :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Second_Battle_of_Bapaume
+
+dbr:Second_Battle_of_Bapaume rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Second_Battle_of_Champagne
+
+dbr:Second_Battle_of_Champagne rdf:type dbo:MilitaryConflict ,
+                                        owl:NamedIndividual ,
+                                        owl:Thing ;
+                               
+                               :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Second_Battle_of_the_Aisne
+
+dbr:Second_Battle_of_the_Aisne rdf:type dbo:MilitaryConflict ,
+                                        owl:NamedIndividual ,
+                                        owl:Thing ;
+                               
+                               :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Second_Battle_of_the_Marne
+
+dbr:Second_Battle_of_the_Marne rdf:type dbo:MilitaryConflict ,
+                                        owl:NamedIndividual ,
+                                        owl:Thing ;
+                               
+                               :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Selle
+
+dbr:Selle rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sens
+
+dbr:Sens rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Sicily
+
+dbr:Sicily rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Bastia
+
+dbr:Siege_of_Bastia rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Belfort
+
+dbr:Siege_of_Belfort rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Doullens
+
+dbr:Siege_of_Doullens rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Fort_Crozon
+
+dbr:Siege_of_Fort_Crozon rdf:type dbo:MilitaryConflict ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Maubeuge
+
+dbr:Siege_of_Maubeuge rdf:type dbo:MilitaryConflict ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Meaux
+
+dbr:Siege_of_Meaux rdf:type dbo:MilitaryConflict ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Saint-Florent
+
+dbr:Siege_of_Saint-Florent rdf:type dbo:MilitaryConflict ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Toulon
+
+dbr:Siege_of_Toulon rdf:type dbo:MilitaryConflict ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siegfried_Line
+
+dbr:Siegfried_Line rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Skirmish_at_Joncherey
+
+dbr:Skirmish_at_Joncherey rdf:type dbo:MilitaryConflict ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Soissons
+
+dbr:Soissons rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Spain
+
+dbr:Spain rdf:type dbo:Place ,
+                   owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Spring_Offensive
+
+dbr:Spring_Offensive rdf:type dbo:MilitaryConflict ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Storming_of_the_Bastille
+
+dbr:Storming_of_the_Bastille rdf:type dbo:MilitaryConflict ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Sword_Beach
+
+dbr:Sword_Beach rdf:type dbo:MilitaryConflict ,
+                         owl:NamedIndividual ,
+                         owl:Thing ;
+                
+                :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Tactical_development_on_the_Western_Front_in_1917
+
+dbr:Tactical_development_on_the_Western_Front_in_1917 rdf:type dbo:MilitaryConflict ,
+                                                               owl:NamedIndividual ,
+                                                               owl:Thing ;
+                                                      
+                                                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Thiepval
+
+dbr:Thiepval rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Third_Battle_of_the_Aisne
+
+dbr:Third_Battle_of_the_Aisne rdf:type dbo:MilitaryConflict ,
+                                       owl:NamedIndividual ,
+                                       owl:Thing ;
+                              
+                              :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Toulon
+
+dbr:Toulon rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Toulouse
+
+dbr:Toulouse rdf:type dbo:Place ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Tourcoing
+
+dbr:Tourcoing rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Trippstadt
+
+dbr:Trippstadt rdf:type dbo:Place ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Trouillas
+
+dbr:Trouillas rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Turckheim
+
+dbr:Turckheim rdf:type dbo:Place ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/United_States_Air_Force_in_France
+
+dbr:United_States_Air_Force_in_France rdf:type dbo:MilitaryConflict ,
+                                               owl:NamedIndividual ,
+                                               owl:Thing ;
+                                      
+                                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Upper_Normandy
+
+dbr:Upper_Normandy rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Urrugne
+
+dbr:Urrugne rdf:type dbo:Place ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vercors_Massif
+
+dbr:Vercors_Massif rdf:type dbo:Place ,
+                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Verdun
+
+dbr:Verdun rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Villefranche-sur-Mer
+
+dbr:Villefranche-sur-Mer rdf:type dbo:Place ,
+                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vimy
+
+dbr:Vimy rdf:type dbo:Place ,
+                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vosges
+
+dbr:Vosges rdf:type dbo:Place ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Wattignies-la-Victoire
+
+dbr:Wattignies-la-Victoire rdf:type dbo:Place ,
+                                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/West_Flanders
+
+dbr:West_Flanders rdf:type dbo:Place ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/West_Indies
+
+dbr:West_Indies rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Wissembourg
+
+dbr:Wissembourg rdf:type dbo:Place ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/10_August_(French_Revolution)
+
+<http://dbpedia.org/resource/10_August_(French_Revolution)> rdf:type dbo:MilitaryConflict ,
+                                                                     owl:NamedIndividual ,
+                                                                     owl:Thing ;
+                                                            
+                                                            :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Aisne_(river)
+
+<http://dbpedia.org/resource/Aisne_(river)> rdf:type dbo:Place ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Amiens_(1870)
+
+<http://dbpedia.org/resource/Battle_of_Amiens_(1870)> rdf:type dbo:MilitaryConflict ,
+                                                               owl:NamedIndividual ,
+                                                               owl:Thing ;
+                                                      
+                                                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Arras_(1914)
+
+<http://dbpedia.org/resource/Battle_of_Arras_(1914)> rdf:type dbo:MilitaryConflict ,
+                                                              owl:NamedIndividual ,
+                                                              owl:Thing ;
+                                                     
+                                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Arras_(1917)
+
+<http://dbpedia.org/resource/Battle_of_Arras_(1917)> rdf:type dbo:MilitaryConflict ,
+                                                              owl:NamedIndividual ,
+                                                              owl:Thing ;
+                                                     
+                                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Arras_(1940)
+
+<http://dbpedia.org/resource/Battle_of_Arras_(1940)> rdf:type dbo:MilitaryConflict ,
+                                                              owl:NamedIndividual ,
+                                                              owl:Thing ;
+                                                     
+                                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Beaugency_(1870)
+
+<http://dbpedia.org/resource/Battle_of_Beaugency_(1870)> rdf:type dbo:MilitaryConflict ,
+                                                                  owl:NamedIndividual ,
+                                                                  owl:Thing ;
+                                                         
+                                                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Bordeaux_(1653)
+
+<http://dbpedia.org/resource/Battle_of_Bordeaux_(1653)> rdf:type dbo:MilitaryConflict ,
+                                                                 owl:NamedIndividual ,
+                                                                 owl:Thing ;
+                                                        
+                                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Boulogne_(1940)
+
+<http://dbpedia.org/resource/Battle_of_Boulogne_(1940)> rdf:type dbo:MilitaryConflict ,
+                                                                 owl:NamedIndividual ,
+                                                                 owl:Thing ;
+                                                        
+                                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Caesar's_Camp
+
+<http://dbpedia.org/resource/Battle_of_Caesar's_Camp> rdf:type dbo:MilitaryConflict ,
+                                                               owl:NamedIndividual ,
+                                                               owl:Thing ;
+                                                      
+                                                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Cambrai_(1918)
+
+<http://dbpedia.org/resource/Battle_of_Cambrai_(1918)> rdf:type dbo:MilitaryConflict ,
+                                                                owl:NamedIndividual ,
+                                                                owl:Thing ;
+                                                       
+                                                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Cherbourg_(1864)
+
+<http://dbpedia.org/resource/Battle_of_Cherbourg_(1864)> rdf:type dbo:MilitaryConflict ,
+                                                                  owl:NamedIndividual ,
+                                                                  owl:Thing ;
+                                                         
+                                                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Fontenoy_(841)
+
+<http://dbpedia.org/resource/Battle_of_Fontenoy_(841)> rdf:type dbo:MilitaryConflict ,
+                                                                owl:NamedIndividual ,
+                                                                owl:Thing ;
+                                                       
+                                                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Gravelines_(1558)
+
+<http://dbpedia.org/resource/Battle_of_Gravelines_(1558)> rdf:type dbo:MilitaryConflict ,
+                                                                   owl:NamedIndividual ,
+                                                                   owl:Thing ;
+                                                          
+                                                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Haguenau_(1793)
+
+<http://dbpedia.org/resource/Battle_of_Haguenau_(1793)> rdf:type dbo:MilitaryConflict ,
+                                                                 owl:NamedIndividual ,
+                                                                 owl:Thing ;
+                                                        
+                                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Hondschoote_(1793)
+
+<http://dbpedia.org/resource/Battle_of_Hondschoote_(1793)> rdf:type dbo:MilitaryConflict ,
+                                                                    owl:NamedIndividual ,
+                                                                    owl:Thing ;
+                                                           
+                                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Les_Sables-d'Olonne
+
+<http://dbpedia.org/resource/Battle_of_Les_Sables-d'Olonne> rdf:type dbo:MilitaryConflict ,
+                                                                     owl:NamedIndividual ,
+                                                                     owl:Thing ;
+                                                            
+                                                            :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Paris_(1814)
+
+<http://dbpedia.org/resource/Battle_of_Paris_(1814)> rdf:type dbo:MilitaryConflict ,
+                                                              owl:NamedIndividual ,
+                                                              owl:Thing ;
+                                                     
+                                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Sedan_(1940)
+
+<http://dbpedia.org/resource/Battle_of_Sedan_(1940)> rdf:type dbo:MilitaryConflict ,
+                                                              owl:NamedIndividual ,
+                                                              owl:Thing ;
+                                                     
+                                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Soissons_(1918)
+
+<http://dbpedia.org/resource/Battle_of_Soissons_(1918)> rdf:type dbo:MilitaryConflict ,
+                                                                 owl:NamedIndividual ,
+                                                                 owl:Thing ;
+                                                        
+                                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_St._Quentin_(1557)
+
+<http://dbpedia.org/resource/Battle_of_St._Quentin_(1557)> rdf:type dbo:MilitaryConflict ,
+                                                                    owl:NamedIndividual ,
+                                                                    owl:Thing ;
+                                                           
+                                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_St._Quentin_(1871)
+
+<http://dbpedia.org/resource/Battle_of_St._Quentin_(1871)> rdf:type dbo:MilitaryConflict ,
+                                                                    owl:NamedIndividual ,
+                                                                    owl:Thing ;
+                                                           
+                                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Toulouse_(1814)
+
+<http://dbpedia.org/resource/Battle_of_Toulouse_(1814)> rdf:type dbo:MilitaryConflict ,
+                                                                 owl:NamedIndividual ,
+                                                                 owl:Thing ;
+                                                        
+                                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Toulouse_(721)
+
+<http://dbpedia.org/resource/Battle_of_Toulouse_(721)> rdf:type dbo:MilitaryConflict ,
+                                                                owl:NamedIndividual ,
+                                                                owl:Thing ;
+                                                       
+                                                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Villafranca_(1744)
+
+<http://dbpedia.org/resource/Battle_of_Villafranca_(1744)> rdf:type dbo:MilitaryConflict ,
+                                                                    owl:NamedIndividual ,
+                                                                    owl:Thing ;
+                                                           
+                                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Vosges_(58_BC)
+
+<http://dbpedia.org/resource/Battle_of_Vosges_(58_BC)> rdf:type dbo:MilitaryConflict ,
+                                                                owl:NamedIndividual ,
+                                                                owl:Thing ;
+                                                       
+                                                       :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_Wissembourg_(1870)
+
+<http://dbpedia.org/resource/Battle_of_Wissembourg_(1870)> rdf:type dbo:MilitaryConflict ,
+                                                                    owl:NamedIndividual ,
+                                                                    owl:Thing ;
+                                                           
+                                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Battle_of_the_Sambre_(1918)
+
+<http://dbpedia.org/resource/Battle_of_the_Sambre_(1918)> rdf:type dbo:MilitaryConflict ,
+                                                                   owl:NamedIndividual ,
+                                                                   owl:Thing ;
+                                                          
+                                                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Eaucourt_l'Abbaye
+
+<http://dbpedia.org/resource/Capture_of_Eaucourt_l'Abbaye> rdf:type dbo:MilitaryConflict ,
+                                                                    owl:NamedIndividual ,
+                                                                    owl:Thing ;
+                                                           
+                                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Capture_of_Le_Quesnoy_(1918)
+
+<http://dbpedia.org/resource/Capture_of_Le_Quesnoy_(1918)> rdf:type dbo:MilitaryConflict ,
+                                                                    owl:NamedIndividual ,
+                                                                    owl:Thing ;
+                                                           
+                                                           :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Champagne_(historical_province)
+
+<http://dbpedia.org/resource/Champagne_(historical_province)> rdf:type dbo:Place ,
+                                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Demarcation_line_(France)
+
+<http://dbpedia.org/resource/Demarcation_line_(France)> rdf:type dbo:MilitaryConflict ,
+                                                                 owl:NamedIndividual ,
+                                                                 owl:Thing ;
+                                                        
+                                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Dives_(river)
+
+<http://dbpedia.org/resource/Dives_(river)> rdf:type dbo:Place ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Falaise,_Calvados
+
+<http://dbpedia.org/resource/Falaise,_Calvados> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/First_Battle_of_Wissembourg_(1793)
+
+<http://dbpedia.org/resource/First_Battle_of_Wissembourg_(1793)> rdf:type dbo:MilitaryConflict ,
+                                                                          owl:NamedIndividual ,
+                                                                          owl:Thing ;
+                                                                 
+                                                                 :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Fontenoy,_Yonne
+
+<http://dbpedia.org/resource/Fontenoy,_Yonne> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Garris,_Pyrénées-Atlantiques
+
+<http://dbpedia.org/resource/Garris,_Pyrénées-Atlantiques> rdf:type dbo:Place ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Graignes,_Manche
+
+<http://dbpedia.org/resource/Graignes,_Manche> rdf:type dbo:Place ,
+                                                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Granville,_Manche
+
+<http://dbpedia.org/resource/Granville,_Manche> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Hohenzollern_Redoubt_(1916)
+
+<http://dbpedia.org/resource/Hohenzollern_Redoubt_(1916)> rdf:type dbo:MilitaryConflict ,
+                                                                   owl:NamedIndividual ,
+                                                                   owl:Thing ;
+                                                          
+                                                          :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Le_Hamel,_Somme
+
+<http://dbpedia.org/resource/Le_Hamel,_Somme> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Les_Sables-d'Olonne
+
+<http://dbpedia.org/resource/Les_Sables-d'Olonne> rdf:type dbo:Place ,
+                                                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Loire_Campaign_(1429)
+
+<http://dbpedia.org/resource/Loire_Campaign_(1429)> rdf:type dbo:MilitaryConflict ,
+                                                             owl:NamedIndividual ,
+                                                             owl:Thing ;
+                                                    
+                                                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Lorraine_(region)
+
+<http://dbpedia.org/resource/Lorraine_(region)> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Lost_Battalion_(Europe,_World_War_II)
+
+<http://dbpedia.org/resource/Lost_Battalion_(Europe,_World_War_II)> rdf:type dbo:MilitaryConflict ,
+                                                                             owl:NamedIndividual ,
+                                                                             owl:Thing ;
+                                                                    
+                                                                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Marne_(river)
+
+<http://dbpedia.org/resource/Marne_(river)> rdf:type dbo:Place ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Montcornet,_Aisne
+
+<http://dbpedia.org/resource/Montcornet,_Aisne> rdf:type dbo:Place ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Nivelle_(river)
+
+<http://dbpedia.org/resource/Nivelle_(river)> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Nord_(French_department)
+
+<http://dbpedia.org/resource/Nord_(French_department)> rdf:type dbo:Place ,
+                                                                owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Operation_Hardtack_(commando_raid)
+
+<http://dbpedia.org/resource/Operation_Hardtack_(commando_raid)> rdf:type dbo:MilitaryConflict ,
+                                                                          owl:NamedIndividual ,
+                                                                          owl:Thing ;
+                                                                 
+                                                                 :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Orange,_Vaucluse
+
+<http://dbpedia.org/resource/Orange,_Vaucluse> rdf:type dbo:Place ,
+                                                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Rochefort,_Charente-Maritime
+
+<http://dbpedia.org/resource/Rochefort,_Charente-Maritime> rdf:type dbo:Place ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Aubin-sur-Mer,_Calvados
+
+<http://dbpedia.org/resource/Saint-Aubin-sur-Mer,_Calvados> rdf:type dbo:Place ,
+                                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Florent,_Haute-Corse
+
+<http://dbpedia.org/resource/Saint-Florent,_Haute-Corse> rdf:type dbo:Place ,
+                                                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Saint-Quentin,_Aisne
+
+<http://dbpedia.org/resource/Saint-Quentin,_Aisne> rdf:type dbo:Place ,
+                                                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Second_Battle_of_the_Somme_(1918)
+
+<http://dbpedia.org/resource/Second_Battle_of_the_Somme_(1918)> rdf:type dbo:MilitaryConflict ,
+                                                                         owl:NamedIndividual ,
+                                                                         owl:Thing ;
+                                                                
+                                                                :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Sedan,_Ardennes
+
+<http://dbpedia.org/resource/Sedan,_Ardennes> rdf:type dbo:Place ,
+                                                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Calais_(1596)
+
+<http://dbpedia.org/resource/Siege_of_Calais_(1596)> rdf:type dbo:MilitaryConflict ,
+                                                              owl:NamedIndividual ,
+                                                              owl:Thing ;
+                                                     
+                                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Calais_(1940)
+
+<http://dbpedia.org/resource/Siege_of_Calais_(1940)> rdf:type dbo:MilitaryConflict ,
+                                                              owl:NamedIndividual ,
+                                                              owl:Thing ;
+                                                     
+                                                     :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Dunkirk_(1793)
+
+<http://dbpedia.org/resource/Siege_of_Dunkirk_(1793)> rdf:type dbo:MilitaryConflict ,
+                                                               owl:NamedIndividual ,
+                                                               owl:Thing ;
+                                                      
+                                                      :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Le_Catelet_(1595)
+
+<http://dbpedia.org/resource/Siege_of_Le_Catelet_(1595)> rdf:type dbo:MilitaryConflict ,
+                                                                  owl:NamedIndividual ,
+                                                                  owl:Thing ;
+                                                         
+                                                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Le_Quesnoy_(1793)
+
+<http://dbpedia.org/resource/Siege_of_Le_Quesnoy_(1793)> rdf:type dbo:MilitaryConflict ,
+                                                                  owl:NamedIndividual ,
+                                                                  owl:Thing ;
+                                                         
+                                                         :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Lille_(1667)
+
+<http://dbpedia.org/resource/Siege_of_Lille_(1667)> rdf:type dbo:MilitaryConflict ,
+                                                             owl:NamedIndividual ,
+                                                             owl:Thing ;
+                                                    
+                                                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Lille_(1708)
+
+<http://dbpedia.org/resource/Siege_of_Lille_(1708)> rdf:type dbo:MilitaryConflict ,
+                                                             owl:NamedIndividual ,
+                                                             owl:Thing ;
+                                                    
+                                                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Perpignan_(1542)
+
+<http://dbpedia.org/resource/Siege_of_Perpignan_(1542)> rdf:type dbo:MilitaryConflict ,
+                                                                 owl:NamedIndividual ,
+                                                                 owl:Thing ;
+                                                        
+                                                        :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Siege_of_Rouen_(1591)
+
+<http://dbpedia.org/resource/Siege_of_Rouen_(1591)> rdf:type dbo:MilitaryConflict ,
+                                                             owl:NamedIndividual ,
+                                                             owl:Thing ;
+                                                    
+                                                    :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Six_Days'_Campaign
+
+<http://dbpedia.org/resource/Six_Days'_Campaign> rdf:type dbo:MilitaryConflict ,
+                                                          owl:NamedIndividual ,
+                                                          owl:Thing ;
+                                                 
+                                                 :place dbr:France .
+
+
+
+###  http://dbpedia.org/resource/Somme_(department)
+
+<http://dbpedia.org/resource/Somme_(department)> rdf:type dbo:Place ,
+                                                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Vauchamps,_Marne
+
+<http://dbpedia.org/resource/Vauchamps,_Marne> rdf:type dbo:Place ,
+                                                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Western_Front_(World_War_I)
+
+<http://dbpedia.org/resource/Western_Front_(World_War_I)> rdf:type dbo:MilitaryConflict ,
+                                                                   owl:NamedIndividual ,
+                                                                   owl:Thing ;
+                                                          
+                                                          :place dbr:France .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
