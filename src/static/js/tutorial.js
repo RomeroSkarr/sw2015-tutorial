@@ -8,24 +8,26 @@ function initMap()
 	);
 	map.addListener('click', function(e) 
 		{
-			getPlacesFromCoordinates(e);
+			getPlacesWhereSocietalEventsHappenedFromCoordinates(e);
    			map.panTo(e.latLng);
 		}
 	);
 }
 
-function getPlacesFromCoordinates(e) 
+function getPlacesWhereSocietalEventsHappenedFromCoordinates(e) 
 {	
 	lat = e.latLng.lat();
 	lng = e.latLng.lng();
 	var query = 
 		"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> \n"+
 		"PREFIX dbo: <http://dbpedia.org/ontology/> \n"+
-		"SELECT ?s WHERE \n"+
+		"SELECT ?place WHERE \n"+
 		"{\n"+
-		"    ?s a dbo:Place .\n"+
-		"    ?s geo:lat ?lat .\n"+
-		"    ?s geo:long ?long .\n"+
+		"    ?place a dbo:Place .\n"+
+		"    ?place geo:lat ?lat .\n"+
+		"    ?place geo:long ?long .\n"+
+		"    ?societalEvent a dbo:SocietalEvent . \n"+
+		"    ?societalEvent dbo:place ?place . \n"+
 		"    FILTER ( ?long > "+lng+" - 5 && ?long < "+lng+" + 5 && ?lat > "+lat+" - 5 && ?lat < "+lat+" + 5) \n"+
 		"} LIMIT 100";
 	//var endpoint = 'http://localhost:5820/tutorial/query';
