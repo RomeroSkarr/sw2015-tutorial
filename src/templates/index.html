@@ -6,16 +6,18 @@
 <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 50%;
-      }
-    </style>
+<style>
+  html, body 
+  {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map 
+  {
+    height: 50%;
+  }
+</style>
 <body>
   <div class='col-lg-6' id="map"></div>
   <div class="container">
@@ -28,7 +30,18 @@
     <div class='row'>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKtlmW1_NQV7DtqBmTTWks18zubqsCjlM&signed_in=true&callback=initMap" async defer></script>
       <div class='col-lg-6'>
-        <div id="linktarget1" class='well' style='height: 45em; scroll: both; overflow: auto;'></div>
+        <p>Search for:</p>
+        <select id='option' class='sparql' style='width: 100%'>
+          <option value="MilitaryConflict">Military conflicts</option>
+          <option value="Attack">Attacks</option>
+          <option value="Convention">Conventions</option>
+          <option value="Rebellion">Rebellions</option>
+          <option value="SpaceMission">Space missions</option>
+          <option value="SportsEvent">Sports events</option>
+        </select>
+        <p>
+          <div id="linktarget1" class='well' style='height: 45em; scroll: both; overflow: auto;'></div>
+        </p>
       </div>
       <div class='col-lg-6'>
         <div id="linktarget2" class='well' style='height: 45em; scroll: both; overflow: auto;'></div>

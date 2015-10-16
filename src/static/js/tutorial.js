@@ -16,17 +16,24 @@ function constructPlacesWhereSocietalEventsHappenedFromCoordinatesAndPost(e)
 {	
 	lat = e.latLng.lat();
 	lng = e.latLng.lng();
+	subclassOfSocietalEvent = $('#option').val();
 	var query = 
 		"PREFIX dbr: <http://dbpedia.org/resource/> \n" + 
 		"PREFIX dbo: <http://dbpedia.org/ontology/> \n" + 
 		"PREFIX db: <http://dbpedia.org/> \n" + 
+		"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> \n" +
+		"PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#> \n"+
 		"CONSTRUCT \n" + 
 		"{ \n" + 
-		"	?place a dbo:Place . \n" + 
+		"	?place a :Place . \n" + 
+		"	?place geo:lat ?lat . \n" + 
+		"	?place geo:long ?long . \n" + 
+		"	?societalEvent a :"+subclassOfSocietalEvent+" .  \n" + 
+		"	?societalEvent :place ?place . \n" + 
 		"} \n" + 
 		"WHERE \n" + 
 		"{ \n" + 
-		"	?societalEvent a dbo:SocietalEvent . \n" + 
+		"	?societalEvent a dbo:"+subclassOfSocietalEvent+" .  \n" + 
 		"	?societalEvent dbo:place ?place . \n" + 
 		"	?place geo:lat ?lat . \n" + 
 		"	?place geo:long ?long . \n" + 
@@ -55,18 +62,26 @@ function constructPlacesWhereSocietalEventsHappenedFromCoordinatesAndPost(e)
 		{
 			var pre = $('<pre></pre>');
 			pre.text(data);
-			$('#linktarget1').html(pre);
+			//$('#linktarget1').html(pre);
+			getSpecificKindOfPlaceFromCoordinatesFromOurTripleStore(subclassOfSocietalEvent, lng, lat);
 		})		
 	});
 }
 
 
-function getSpecificKindOfPlaceFromOurTripleStore(subclassOfPlaceWhereSocietalEventHappened) 
+function getSpecificKindOfPlaceFromCoordinatesFromOurTripleStore(subclassOfSocietalEvent, lng, lat)
 {	
-	var query = "PREFIX map: <http://www.semanticweb.org/gabriel/ontologies/FinalProject#> \n"+
-				"SELECT ?x WHERE \n"+
+	var query = "PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#> \n" +
+				"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> \n" +
+				"SELECT ?place WHERE \n"+
 				"{ \n"+
-					"  ?x a map:"+subclassOfPlaceWhereSocietalEventHappened+" . \n"+
+				"	?place a :PlaceWhere" + subclassOfSocietalEvent + "Happened . \n" +
+				"	?place geo:lat ?lat . \n" + 
+				"	?place geo:long ?long . \n" + 
+				"	FILTER ( ?long > "+lng+" - 5 \n" + 
+				"		  && ?long < "+lng+" + 5  \n" + 
+				"		  && ?lat > "+lat+" - 5  \n" + 
+				"		  && ?lat < "+lat+" + 5) \n" + 		
 				"}";
 	var endpoint = 'http://localhost:5820/tutorial/query';
 	var format = 'JSON';	
