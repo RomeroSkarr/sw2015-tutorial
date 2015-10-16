@@ -158,3 +158,26 @@ CONSTRUCT {
   ?societalEvent dbo:place ?place .
   ?societalEvent dbo:place dbr:France .
 }
+
+#################################################################
+#
+#    Places around certain coordinates that had societal events
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX db: <http://dbpedia.org/>
+
+CONSTRUCT {  
+  ?place a dbo:Place .
+} WHERE {
+  ?societalEvent a dbo:SocietalEvent .
+  ?societalEvent dbo:place ?place .
+  ?place geo:lat ?lat .
+  ?place geo:long ?long .
+  FILTER ( ?long > "+lng+" - 5 
+        && ?long < "+lng+" + 5 
+        && ?lat > "+lat+" - 5 
+        && ?lat < "+lat+" + 5) 
+}
