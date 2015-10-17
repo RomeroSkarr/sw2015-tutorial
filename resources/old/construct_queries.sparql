@@ -1,38 +1,5 @@
 #################################################################
 #
-#   The Ultimate construct query
-#     All the others are obsolete now
-#       This one does everything we need
-#
-#################################################################
-
-PREFIX dbr: <http://dbpedia.org/resource/>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX db: <http://dbpedia.org/>
-PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
-PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
-CONSTRUCT
-{
-    ?place a :Place .
-    ?place geo:lat ?lat .
-    ?place geo:long ?long . 
-    ?societalEvent a :"+subclassOfSocietalEvent+" .
-    ?societalEvent :place ?place .
-}
-WHERE
-{
-    ?societalEvent a dbo:"+subclassOfSocietalEvent+" .
-    ?societalEvent dbo:place ?place .
-    ?place geo:lat ?lat .
-    ?place geo:long ?long .
-    FILTER (?long > "+lng+" - 5
-         && ?long < "+lng+" + 5
-         && ?lat > "+lat+" - 5
-         && ?lat < "+lat+" + 5) 
-}
-
-#################################################################
-#
 #    EventsThatHappenedInFrance.ttl - WON'T BE NEEDING THIS ONE
 #
 #################################################################

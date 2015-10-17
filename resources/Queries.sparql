@@ -1,0 +1,53 @@
+#################################################################
+#
+#   The Ultimate CONSTRUCT query
+#     All the others are obsolete now
+#       This one does everything we need
+#
+#################################################################
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX db: <http://dbpedia.org/>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+CONSTRUCT
+{
+    ?place a :Place .
+    ?place geo:lat ?lat .
+    ?place geo:long ?long . 
+    ?societalEvent a :SocietalEvent . #Or a subclass
+    ?societalEvent :place ?place .
+}
+WHERE
+{
+    ?societalEvent a dbo:SocietalEvent . #Or a subclass
+    ?societalEvent dbo:place ?place .
+    ?place geo:lat ?lat .
+    ?place geo:long ?long .
+    FILTER (?long > LONGITUDE_GOES_HERE - 5
+         && ?long < LONGITUDE_GOES_HERE + 5
+         && ?lat > LATITUDE_GOES_HERE - 5
+         && ?lat < LATITUDE_GOES_HERE + 5) 
+}
+
+#################################################################
+#
+#   The Ultimate SELECT query
+#     All the others are obsolete now
+#       This one does everything we need
+#
+#################################################################
+
+PREFIX : <http://www.semanticweb.org/gabriel/ontologies/FinalProject#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT ?place WHERE
+{
+  ?place a :PlaceWhereSocietalEventHappened . #Or a subclass
+  ?place geo:lat ?lat .
+  ?place geo:long ?long .
+  FILTER ( ?long > LONGITUDE_GOES_HERE - 5
+        && ?long < LONGITUDE_GOES_HERE + 5 
+        && ?lat > LATITUDE_GOES_HERE - 5
+        && ?lat < LATITUDE_GOES_HERE + 5)
+}

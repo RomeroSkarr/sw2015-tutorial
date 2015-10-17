@@ -52,17 +52,13 @@ function constructPlacesWhereSocietalEventsHappenedFromCoordinatesAndPost(e)
 	{
 		var pre = $('<pre></pre>');
 		pre.text(data);
-		$('#linktarget1').html(pre);
-		
-		// New, set an identifier on our <pre> tag		
-		pre.attr('id','linktarget1');
-				
+		$('#linktarget1').html(pre);			
+		pre.attr('id','linktarget1');				
 		var rdf_data = $('#linktarget1').text();				
 		$.post('/store',data={'data': rdf_data}, function(data)
 		{
 			var pre = $('<pre></pre>');
 			pre.text(data);
-			//$('#linktarget1').html(pre);
 			getSpecificKindOfPlaceFromCoordinatesFromOurTripleStore(subclassOfSocietalEvent, lng, lat);
 		})		
 	});
@@ -121,6 +117,7 @@ function getSpecificKindOfPlaceFromCoordinatesFromOurTripleStore(subclassOfSocie
 		} 
 		catch(err) 
 		{
+			alert(err);
 			$('#linktarget2').html('Something went wrong!');
 		}		
 	});	
