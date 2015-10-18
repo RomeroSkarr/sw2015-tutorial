@@ -1,33 +1,44 @@
-#Tutorial for the Semantic Web course
-### @VU University Amsterdam
-#### Rinke Hoekstra (<rinke.hoekstra@vu.nl>)
+* Description
+	
+		This is our project for navigating around Google Maps 
+	and seeing important events that happened wherever you click.
 
-This tutorial shows the basics for building a Semantic Web-based application by guiding you through some of the typical steps involved. This means:
+		You can choose to see the following types of events:
+			- Military conflicts
+			- Attacks
+			- Conventions
+			- Rebellions
+			- Space missions
+			- Sports events
 
-* Styling your webpage using CSS
-* Using client side scripting for manipulating the webpage
-* Using server side scripting for mediating between your own triple store and others
-* Posting information to your triple store
-* Using reasoning facilities of your triple store
+		After choosing one of them  from the drop-down menu 
+	(Military Conflicts is the default option) the user 
+	just clicks	the map and awaits for the results on 
+	the second grey box.
 
-### Requirements
+		After the click, we run a CONSTRUCT query agains dbpedia 
+	(you can check our queries on resources/Queries.sparql) 
+	and show the results on the first grey box. We then post 
+	this to our triple store and run a SELECT query against it, 
+	searching for places where the specific type of event that 
+	the user selected happened, and that's something inferred.
+ 
+* How to run
 
-To get this thing up and running on a local machine, you need the following:
+	- Create stardog database called "tutorial"
+	- Upload resources/Ontology.ttl
+	- Go to http://127.0.0.1:5000/
+	- Click on the map!
 
-* Python 2.7
-* Virtualenv (`pip install virtualenv`)
-* Setup the virtualenv in the directory of this repository (`virtualenv .`)
-* Activate the virtualenv (`source bin/activate` on linux-like systems)
-* Install the necessary packages (install using `pip install -r requirements.txt`)
-* A recent Stardog installation
-	* The script assumes a Stardog database with the name 'tutorial' running at <http://localhost:5820/tutorial> (security disabled).
-	* The database should have resoning enabled, and "SameAs" reasoning should be set to "Full".
-	* If you want to use a different name or location (i.e. not running on localhost, port 5820) you need to set the `TUTORIAL_REPOSITORY` variable in `src/tutorial.py`
+* Resources
 
-Once everything is ready:
+	- You can check our queries on resources/Queries.sparql 
+	and our ontology on resources/Ontology.ttl
 
-* start your Stardog server with `stardog-admin server start --disable-security`,
-* change dir into the `src` directory, and
-* run `python tutorial.py`.
+	- There are some old RDFs and SPARQL queries on 
+	resources/old but it's all obsolete and useless now
 
-The tutorial is then running at <http://localhost:5000> .
+* Students
+
+	Gabriel Romero Ricardo
+	Elisa Dell'Arriva
