@@ -101,11 +101,18 @@ function getSpecificKindOfPlaceFromCoordinatesFromOurTripleStore(subclassOfSocie
 				$.each(vars, function(index, v)
 				{
 					var v_value = (value[v]['value']);
-					var name = v_value.substring(v_value.indexOf('#')+1);
+
+					/*
+						We do a substring(28) here to 
+							remove the "http://dbpedia.org/resource/"
+					*/
+					var name = v_value.substring(28);
 					li.append("<table width=\"100%\">"+
 								"<tr>"+
 									"<td align=\":left\">"+
-										name.replace(/_/g," ")+
+										"<a href=\"http://en.wikipedia.org/wiki/"+name+"\">"+
+											name.replace(/_/g," ")+
+										"</a>"+
 									"</td>"+
 								"</tr>"+
 							"</table>"+
